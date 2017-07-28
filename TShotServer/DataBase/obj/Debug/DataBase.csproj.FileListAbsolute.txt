@@ -1,0 +1,7 @@
+D:\TShot\ShotServer\TShotServer\DataBase\bin\Debug\DataBase.pdb
+D:\TShot\ShotServer\TShotServer\DataBase\obj\Debug\DataBase.pdb
+D:\TShot\ShotServer\TShotServer\DataBase\bin\Debug\DataBase.exe.config
+D:\TShot\ShotServer\TShotServer\DataBase\bin\Debug\DataBase.exe
+D:\TShot\ShotServer\TShotServer\DataBase\obj\Debug\DataBase.exe
+D:\TShot\ShotServer\TShotServer\DataBase\bin\Debug\TShotDataBase.mdf
+D:\TShot\ShotServer\TShotServer\DataBase\bin\Debug\TShotDataBase_log.ldf

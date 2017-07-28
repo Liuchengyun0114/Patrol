@@ -1,0 +1,81 @@
+
+<div class="container" style="height:100%;width:100%;padding:10px 10px;margin: 10px;"  ng-cloak>
+    <div ng-include="URL_LIST.NAVBAR"></div>
+    <div class="col-xs-12" style="height: 80%;">
+        <!--主页面左侧导航栏-->
+        <div class="col-xs-2" ng-include ="URL_LIST.LIST" style=" height:100%;padding:0;"></div>
+        <!--主页右侧内容区域-->
+        <div class="col-xs-10" style="height:100%;">
+            <!--单页应用入口-->
+            <div class="well">
+                <h2 class="text-primary">权限管理|编辑 <img ng-show="!cando" class="img-circle" style="width:50px;height:50px;" src="images/loading.gif"></h2>
+                <div class="panel-primary">
+                    <form role="form">
+                        <!-- 搜索条件 代理店 -->
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <label class="text-danger">用户名</label>
+                                <div class="bg-info">
+                                    <span class="text-warning">{{user.name}}</span>
+                                </div>
+                            </div>
+                            <div class="col-xs-6">
+                                <label class="text-danger">组织</label>
+                                <div class="bg-info">
+                                    <span class="text-warning">{{user.department}}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <label class="text-danger">系统管理权限</label>
+                                <div>
+                                    <label class="checkbox-inline text-warning">
+                                        <input type="radio" name="isadmin" id="none" value="0" ng-model="user.isadmin">无
+                                    </label>
+                                    <label class="checkbox-inline text-success">
+                                        <input type="radio" name="isadmin" id="have" value="1" ng-model="user.isadmin">有
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <label class="text-danger">报告检索的权限</label>
+                                <div>
+                                    <label class="checkbox-inline text-warning">
+                                        <input type="radio" name="permission" id="all" value="0" ng-model="user.search_range">全公司
+                                    </label>
+                                    <label class="checkbox-inline text-success">
+                                        <input type="radio" name="permission" id="filiale" value="1" ng-model="user.search_range">分公司
+                                    </label>
+                                    <label class="checkbox-inline text-success">
+                                        <input type="radio" name="permission" id="person" value="2" ng-model="user.search_range">个人
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row table-bordered">
+                            <div class="col-xs-4">
+                                <div class="btn btn-warning btn-block btn-lg" ng-click="exitNoSave()">返回</div>
+                            </div>
+                            <div class="col-xs-4" ng-show="user.is_patrol_user">
+                                <div class="btn btn-primary btn-block btn-lg" ng-click="exitWithSave()">修改权限</div>
+                            </div>
+                            <div class="col-xs-4" ng-show="user.is_patrol_user">
+                                <div class="btn btn-primary btn-block btn-lg" ng-click="deleteUser()">删除用户</div>
+                            </div>
+                            <div class="col-xs-4" ng-show="!user.is_patrol_user">
+                                <div class="btn btn-primary btn-block btn-lg" ng-click="addUser()">加入特巡</div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</div>
+
+

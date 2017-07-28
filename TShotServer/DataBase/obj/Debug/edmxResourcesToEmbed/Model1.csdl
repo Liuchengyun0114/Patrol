@@ -1,0 +1,249 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TShotModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="TShotConnect" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="COMPANYMSTs" EntityType="TShotModel.COMPANYMST" />
+    <EntitySet Name="CUSTMSTs" EntityType="TShotModel.CUSTMST" />
+    <EntitySet Name="MACHINEMSTs" EntityType="TShotModel.MACHINEMST" />
+    <EntitySet Name="MACHINETYPEMSTs" EntityType="TShotModel.MACHINETYPEMST" />
+    <EntitySet Name="STAFFMSTs" EntityType="TShotModel.STAFFMST" />
+    <EntitySet Name="SUBCOMPANYMSTs" EntityType="TShotModel.SUBCOMPANYMST" />
+    <EntitySet Name="USERMSTs" EntityType="TShotModel.USERMST" />
+  </EntityContainer>
+  <EntityType Name="COMPANYMST">
+    <Key>
+      <PropertyRef Name="COMPANYCD" />
+    </Key>
+    <Property Name="COMPANYCD" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="true" />
+    <Property Name="COMPANYABBRCD" Type="String" Nullable="false" MaxLength="3" Unicode="false" FixedLength="true" />
+    <Property Name="COMPANYNM" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="COMPANYABBRNM" Type="String" Nullable="false" MaxLength="40" Unicode="false" FixedLength="false" />
+    <Property Name="AREACD" Type="String" MaxLength="2" Unicode="false" FixedLength="true" />
+    <Property Name="ADDRESS" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="TEL" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="FAX" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="ZIP" Type="String" MaxLength="6" Unicode="false" FixedLength="false" />
+    <Property Name="CONTACTMAN" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="CONTACTTEL" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="ACCOUNTDAY" Type="String" MaxLength="3" Unicode="false" FixedLength="false" />
+    <Property Name="AVERMANCOST" Type="Decimal" Precision="12" Scale="2" />
+    <Property Name="MOVECOST" Type="Decimal" Precision="12" Scale="2" />
+    <Property Name="INNERSALEPER" Type="Decimal" Precision="4" Scale="2" />
+    <Property Name="SERVICETAXPER" Type="Decimal" Precision="5" Scale="2" />
+    <Property Name="PARTSTAXPER" Type="Decimal" Precision="5" Scale="2" />
+    <Property Name="ACTIONFLG" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="true" />
+    <Property Name="UPDATEMAN" Type="String" MaxLength="8" Unicode="false" FixedLength="true" />
+    <Property Name="UPDATETIME" Type="DateTime" />
+    <Property Name="TRANSFLG" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
+    <Property Name="TRANSDATE" Type="String" MaxLength="8" Unicode="false" FixedLength="false" />
+    <Property Name="BOXUPMONEYSHOWFLG" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="true" />
+    <Property Name="WORKMONEEYSHOWFLG" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="true" />
+    <Property Name="ELLECOMPANYCD" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="OUTADMIYMNYSHOWFLG" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="false" />
+    <Property Name="REMAKEPARTSCD" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="REMAKECOST" Type="Decimal" Precision="12" Scale="2" />
+  </EntityType>
+  <EntityType Name="CUSTMST">
+    <Key>
+      <PropertyRef Name="CUSTCD" />
+    </Key>
+    <Property Name="CUSTCD" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="CUSTNM" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="CUSTABBRNM" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="CUSTNMPIN" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="CUSTKNDCD" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+    <Property Name="CUSTID" Type="String" MaxLength="40" Unicode="false" FixedLength="false" />
+    <Property Name="ADDRESS" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="ZIP" Type="String" MaxLength="6" Unicode="false" FixedLength="false" />
+    <Property Name="TEL" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="FAX" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="CUSTRANK" Type="String" MaxLength="2" Unicode="false" FixedLength="false" />
+    <Property Name="CUSTOLDRANK" Type="String" MaxLength="2" Unicode="false" FixedLength="false" />
+    <Property Name="SALESMANCD" Type="String" MaxLength="8" Unicode="false" FixedLength="true" />
+    <Property Name="PARTSMANCD" Type="String" MaxLength="8" Unicode="false" FixedLength="true" />
+    <Property Name="SERVICEMANCD" Type="String" MaxLength="8" Unicode="false" FixedLength="true" />
+    <Property Name="CONTACTMAN1" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="CONTACTEMAIL1" Type="String" MaxLength="40" Unicode="false" FixedLength="false" />
+    <Property Name="CONTACTTEL1" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="CONTACTMAN2" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="CONTACTEMAIL2" Type="String" MaxLength="40" Unicode="false" FixedLength="false" />
+    <Property Name="CONTACTTEL2" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="COMPANYCD" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="true" />
+    <Property Name="PAYBANKNM" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="PAYBANKACCOUNT" Type="String" MaxLength="40" Unicode="false" FixedLength="false" />
+    <Property Name="ReceiveFLG" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="true" />
+    <Property Name="ReceivePERIOD" Type="Int32" />
+    <Property Name="ACCOUNTDATE" Type="String" MaxLength="3" Unicode="false" FixedLength="false" />
+    <Property Name="TRADEFLG" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="true" />
+    <Property Name="ACTIONFLG" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="true" />
+    <Property Name="UPDATETIME" Type="DateTime" />
+    <Property Name="UPDATEMAN" Type="String" MaxLength="8" Unicode="false" FixedLength="true" />
+    <Property Name="Analyze1" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="Analyze2" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="PAYCUSTCD" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+    <Property Name="TRANSFLG" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
+    <Property Name="TRANSDATE" Type="String" MaxLength="8" Unicode="false" FixedLength="false" />
+    <Property Name="AutoFLG" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+    <Property Name="FICUSTCD" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="CUSTLASTOLDRANK" Type="String" MaxLength="2" Unicode="false" FixedLength="false" />
+    <Property Name="ServiceReceiveFLG" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+    <Property Name="ServiceReceivePERIOD" Type="Int32" />
+    <Property Name="ServiceACCOUNTDATE" Type="String" Nullable="false" MaxLength="3" Unicode="false" FixedLength="false" />
+    <Property Name="CITYAREACD" Type="String" MaxLength="5" Unicode="false" FixedLength="false" />
+    <Property Name="ISPOINTMEMBER" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+    <Property Name="SMSPARTSFLG" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+    <Property Name="SMSSALESFLG" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+    <Property Name="SMSSERVICEFLG" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+    <Property Name="COSTCENTERCD" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="COSTCENTERNM" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="CSVFLG" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+    <Property Name="CreateCSVTime" Type="DateTime" />
+    <Property Name="MCUSTRANK" Type="String" MaxLength="3" Unicode="true" FixedLength="false" />
+    <Property Name="MCUSTOLDRANK" Type="String" MaxLength="3" Unicode="true" FixedLength="false" />
+    <Property Name="MCUSTLASTOLDRANK" Type="String" MaxLength="3" Unicode="true" FixedLength="false" />
+    <Property Name="custrankdate" Type="String" MaxLength="8" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="MACHINEMST">
+    <Key>
+      <PropertyRef Name="MAKERCD" />
+      <PropertyRef Name="MACHINECD" />
+      <PropertyRef Name="MACHINESERIALNUM" />
+    </Key>
+    <Property Name="MAKERCD" Type="String" Nullable="false" MaxLength="3" Unicode="false" FixedLength="false" />
+    <Property Name="MACHINECD" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="MACHINESERIALNUM" Type="String" Nullable="false" MaxLength="25" Unicode="false" FixedLength="false" />
+    <Property Name="PINCD" Type="String" MaxLength="25" Unicode="false" FixedLength="false" />
+    <Property Name="MAKEDATE" Type="String" MaxLength="8" Unicode="false" FixedLength="false" />
+    <Property Name="OUTFACTRYDATE" Type="String" MaxLength="8" Unicode="false" FixedLength="false" />
+    <Property Name="NEWRECEIVEDATE" Type="String" MaxLength="8" Unicode="false" FixedLength="false" />
+    <Property Name="OLDRECEIVEDATE" Type="String" MaxLength="8" Unicode="false" FixedLength="false" />
+    <Property Name="MACHINEKIND" Type="String" MaxLength="2" Unicode="false" FixedLength="true" />
+    <Property Name="KIKAI_SHIYOU" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="MANUFACTURECD" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="SALESUBCOMPANYCD" Type="String" MaxLength="10" Unicode="false" FixedLength="true" />
+    <Property Name="OLDCOMPANYCD" Type="String" MaxLength="10" Unicode="false" FixedLength="true" />
+    <Property Name="OLDSUBCOMPANYCD" Type="String" MaxLength="10" Unicode="false" FixedLength="true" />
+    <Property Name="OLDCUSTCD" Type="String" MaxLength="10" Unicode="false" FixedLength="true" />
+    <Property Name="COMPANYCD" Type="String" MaxLength="10" Unicode="false" FixedLength="true" />
+    <Property Name="SUBCOMPANYCD" Type="String" MaxLength="10" Unicode="false" FixedLength="true" />
+    <Property Name="CUSTCD" Type="String" MaxLength="10" Unicode="false" FixedLength="true" />
+    <Property Name="WORKHOURS" Type="Decimal" Precision="8" Scale="1" />
+    <Property Name="MACHINESTS" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="true" />
+    <Property Name="ACTIONFLG" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="true" />
+    <Property Name="UPDATETIME" Type="DateTime" />
+    <Property Name="UPDATEMAN" Type="String" MaxLength="40" Unicode="false" FixedLength="false" />
+    <Property Name="memo" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="TRANSFLG" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
+    <Property Name="TRANSDATE" Type="String" MaxLength="8" Unicode="false" FixedLength="false" />
+    <Property Name="CHANGEREASON" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+    <Property Name="NewOldKbn" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="true" />
+  </EntityType>
+  <EntityType Name="MACHINETYPEMST">
+    <Key>
+      <PropertyRef Name="MAKERCD" />
+      <PropertyRef Name="MACHINECD" />
+    </Key>
+    <Property Name="MAKERCD" Type="String" Nullable="false" MaxLength="3" Unicode="false" FixedLength="false" />
+    <Property Name="MACHINECD" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="MACHINENM" Type="String" Nullable="false" MaxLength="40" Unicode="false" FixedLength="false" />
+    <Property Name="ACTIONFLG" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="true" />
+    <Property Name="UPDATETIME" Type="DateTime" />
+    <Property Name="UPDATEMAN" Type="String" MaxLength="8" Unicode="false" FixedLength="false" />
+    <Property Name="TRANSFLG" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
+    <Property Name="TRANSDATE" Type="String" MaxLength="8" Unicode="false" FixedLength="false" />
+    <Property Name="MachineSize" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="STAFFMST">
+    <Key>
+      <PropertyRef Name="STAFFCD" />
+    </Key>
+    <Property Name="STAFFCD" Type="String" Nullable="false" MaxLength="8" Unicode="false" FixedLength="true" />
+    <Property Name="COMPANYCD" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="true" />
+    <Property Name="SUBCOMPANYCD" Type="String" MaxLength="10" Unicode="false" FixedLength="true" />
+    <Property Name="STAFFNM" Type="String" Nullable="false" MaxLength="40" Unicode="false" FixedLength="false" />
+    <Property Name="SEX" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="true" />
+    <Property Name="BIRTH" Type="String" MaxLength="8" Unicode="false" FixedLength="false" />
+    <Property Name="IDCARD" Type="String" Nullable="false" MaxLength="18" Unicode="false" FixedLength="false" />
+    <Property Name="BIRTHADD" Type="String" MaxLength="18" Unicode="false" FixedLength="false" />
+    <Property Name="EDUCATION" Type="String" MaxLength="2" Unicode="false" FixedLength="false" />
+    <Property Name="ADDRESS" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="ZIP" Type="String" MaxLength="6" Unicode="false" FixedLength="false" />
+    <Property Name="TEL" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="MOBILE" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="CERTIFICATENAME" Type="String" MaxLength="40" Unicode="true" FixedLength="false" />
+    <Property Name="CERTIFICATECD" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="CERTIFICATERANK" Type="String" MaxLength="40" Unicode="true" FixedLength="false" />
+    <Property Name="ACTIONFLG" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="true" />
+    <Property Name="UPDATETIME" Type="DateTime" />
+    <Property Name="UPDATEMAN" Type="String" MaxLength="8" Unicode="false" FixedLength="true" />
+    <Property Name="Branch" Type="String" MaxLength="5" Unicode="false" FixedLength="false" />
+    <Property Name="Job" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="HQFLG" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+    <Property Name="PartsDiscountPer" Type="Decimal" Precision="5" Scale="2" />
+    <Property Name="ServiceDiscountPer" Type="Decimal" Precision="5" Scale="2" />
+    <Property Name="FIBRANCH" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="SectionOfficeCD" Type="String" MaxLength="5" Unicode="false" FixedLength="false" />
+    <Property Name="transflg" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
+    <Property Name="transdate" Type="String" MaxLength="8" Unicode="false" FixedLength="false" />
+    <Property Name="SERVICEITEMENABLEFLG" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+    <Property Name="CERTIFICATENO" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="ONTHEJOBFLG" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
+    <Property Name="ENTRYDATE" Type="String" MaxLength="8" Unicode="false" FixedLength="false" />
+    <Property Name="DEPARTUREDATE" Type="String" MaxLength="8" Unicode="false" FixedLength="false" />
+    <Property Name="GESID" Type="String" MaxLength="40" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="SUBCOMPANYMST">
+    <Key>
+      <PropertyRef Name="SUBCOMPANYCD" />
+    </Key>
+    <Property Name="SUBCOMPANYCD" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="true" />
+    <Property Name="PRESUBCOMPANYCD" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="true" />
+    <Property Name="COMPANYCD" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="true" />
+    <Property Name="SUBCOMPANYNM" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="SUBCOMPANYABBRNM" Type="String" MaxLength="40" Unicode="false" FixedLength="false" />
+    <Property Name="SUBCOMPANYKBN" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="true" />
+    <Property Name="ADDRESS" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="TEL" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="FAX" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="ZIP" Type="String" MaxLength="6" Unicode="false" FixedLength="false" />
+    <Property Name="CONTACTMAN" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="CONTACTTEL" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="BANKNAME" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="BANKACCOUNT" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="TAXNUM" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="SERVICETAXPER" Type="Decimal" Precision="5" Scale="2" />
+    <Property Name="PARTSTAXPER" Type="Decimal" Precision="5" Scale="2" />
+    <Property Name="ACCOUNTDAY" Type="String" MaxLength="3" Unicode="false" FixedLength="false" />
+    <Property Name="ACTIONFLG" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="true" />
+    <Property Name="UPDATEMAN" Type="String" MaxLength="8" Unicode="false" FixedLength="true" />
+    <Property Name="UPDATETIME" Type="DateTime" />
+    <Property Name="AreaCD" Type="String" MaxLength="2" Unicode="false" FixedLength="true" />
+    <Property Name="QUOTATIONFLG" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+    <Property Name="TRANSFLG" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
+    <Property Name="TRANSDATE" Type="String" MaxLength="8" Unicode="false" FixedLength="false" />
+    <Property Name="AccountSubCompanyCd" Type="String" MaxLength="10" Unicode="false" FixedLength="true" />
+    <Property Name="StockOpenFlg" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="true" />
+    <Property Name="FinanceDepartCD" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="SALESCENTERCD" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="IsHCS" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+    <Property Name="IsELL" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+    <Property Name="ELLCD" Type="String" MaxLength="10" Unicode="false" FixedLength="true" />
+    <Property Name="CenterProfitCD" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="isSmallScaleTaxPayer" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
+    <Property Name="TaxRate" Type="Decimal" Precision="5" Scale="2" />
+  </EntityType>
+  <EntityType Name="USERMST">
+    <Key>
+      <PropertyRef Name="LOGINID" />
+    </Key>
+    <Property Name="LOGINID" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="STAFFCD" Type="String" Nullable="false" MaxLength="8" Unicode="false" FixedLength="true" />
+    <Property Name="PWD" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="LEVELCD" Type="String" MaxLength="3" Unicode="false" FixedLength="true" />
+    <Property Name="DISCOUNTPER" Type="Decimal" Precision="5" Scale="2" />
+    <Property Name="ACTIONFLG" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="true" />
+    <Property Name="UPDATETIME" Type="DateTime" />
+    <Property Name="UPDATEMAN" Type="String" MaxLength="8" Unicode="false" FixedLength="true" />
+    <Property Name="ServiceDiscountPer" Type="Decimal" Precision="5" Scale="2" />
+    <Property Name="LASTMODIFYPWDDATE" Type="String" MaxLength="8" Unicode="false" FixedLength="false" />
+  </EntityType>
+</Schema>

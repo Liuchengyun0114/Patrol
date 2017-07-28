@@ -1,0 +1,5 @@
+D:\TShot\ShotServer\TShotServer\Model\bin\Debug\Model.dll.config
+D:\TShot\ShotServer\TShotServer\Model\bin\Debug\Model.dll
+D:\TShot\ShotServer\TShotServer\Model\bin\Debug\Model.pdb
+D:\TShot\ShotServer\TShotServer\Model\obj\x86\Debug\Model.dll
+D:\TShot\ShotServer\TShotServer\Model\obj\x86\Debug\Model.pdb

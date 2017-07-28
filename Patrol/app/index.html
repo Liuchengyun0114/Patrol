@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-cn" ng-app="myApp" ng-controller="baseController">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <base href="/">
+
+    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet" type="text/css">
+    <link href="bower_components/angular-bootstrap/ui-bootstrap-csp.css" rel="stylesheet" type="text/css">
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.min.js"></script>
+    <script src="bower_components/angular-route/angular-route.min.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.min.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.min.js"></script>
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!--单页应用入口-->
+        <div ng-view="" ng-cloak></div>
+    </div>
+    <!--底部信息栏-->
+    <div class="row" style="padding:50px;">
+        <span class="col-xs-4 col-md-offset-4 text-primary">上海菱通软件有限公司&copy; CopyRight 2017-2019</span>
+    </div>
+    <script src="/app.js"></script>
+    <script src="/services/dataservice.js"></script>
+    <script src="/directives/myPagination.js"></script>
+    <script src="/routes/router.js"></script>
+    <script src="/controllers/loginController.js"></script>
+    <script src="/controllers/userController.js"></script>
+    <script src="/controllers/userEditController.js"></script>
+    <script src="/controllers/patrolController.js"></script>
+    <script src="/controllers/patrolEditController.js"></script>
+    <script src="/controllers/patrolReportController.js"></script>
+    <script src="/controllers/baseController.js"></script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+D:\TShot\ShotServer\TShotServer\TShotServer\bin\Debug\PatrolServer.exe.config
+D:\TShot\ShotServer\TShotServer\TShotServer\bin\Debug\PatrolServer.exe
+D:\TShot\ShotServer\TShotServer\TShotServer\bin\Debug\PatrolServer.pdb
+D:\TShot\ShotServer\TShotServer\TShotServer\bin\Debug\Model.dll
+D:\TShot\ShotServer\TShotServer\TShotServer\bin\Debug\Model.pdb
+D:\TShot\ShotServer\TShotServer\TShotServer\obj\x86\Debug\PatrolServer.csprojResolveAssemblyReference.cache
+D:\TShot\ShotServer\TShotServer\TShotServer\obj\x86\Debug\PatrolServer.exe
+D:\TShot\ShotServer\TShotServer\TShotServer\obj\x86\Debug\PatrolServer.pdb
+D:\TShot\ShotServer\TShotServer\TShotServer\bin\Debug\LogWriter.dll
+D:\TShot\ShotServer\TShotServer\TShotServer\bin\Debug\log4net.dll
+D:\TShot\ShotServer\TShotServer\TShotServer\bin\Debug\LogWriter.pdb

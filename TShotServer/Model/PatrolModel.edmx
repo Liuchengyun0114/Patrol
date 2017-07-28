@@ -1,0 +1,1083 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="PatrolModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="PatrolModelStoreContainer">
+          <EntitySet Name="COMPANYMST" EntityType="PatrolModel.Store.COMPANYMST" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="CUSTMST" EntityType="PatrolModel.Store.CUSTMST" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="MACHINEMST" EntityType="PatrolModel.Store.MACHINEMST" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="MACHINETYPEMST" EntityType="PatrolModel.Store.MACHINETYPEMST" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PatrolCodeMst" EntityType="PatrolModel.Store.PatrolCodeMst" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PatrolGenerateNO" EntityType="PatrolModel.Store.PatrolGenerateNO" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PatrolReportDetail" EntityType="PatrolModel.Store.PatrolReportDetail" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PatrolReportHeader" EntityType="PatrolModel.Store.PatrolReportHeader" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PatrolServerList" EntityType="PatrolModel.Store.PatrolServerList" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PatrolSpotParts" EntityType="PatrolModel.Store.PatrolSpotParts" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PatrolUserInfo" EntityType="PatrolModel.Store.PatrolUserInfo" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="STAFFMST" EntityType="PatrolModel.Store.STAFFMST" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SUBCOMPANYMST" EntityType="PatrolModel.Store.SUBCOMPANYMST" store:Type="Tables" Schema="dbo" />
+        </EntityContainer>
+        <EntityType Name="COMPANYMST">
+          <Key>
+            <PropertyRef Name="COMPANYCD" />
+          </Key>
+          <Property Name="COMPANYCD" Type="char" Nullable="false" MaxLength="10" />
+          <Property Name="COMPANYABBRCD" Type="char" Nullable="false" MaxLength="3" />
+          <Property Name="COMPANYNM" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="COMPANYABBRNM" Type="varchar" Nullable="false" MaxLength="40" />
+          <Property Name="AREACD" Type="char" MaxLength="2" />
+          <Property Name="ADDRESS" Type="varchar" MaxLength="255" />
+          <Property Name="TEL" Type="varchar" MaxLength="20" />
+          <Property Name="FAX" Type="varchar" MaxLength="20" />
+          <Property Name="ZIP" Type="varchar" MaxLength="6" />
+          <Property Name="CONTACTMAN" Type="varchar" MaxLength="100" />
+          <Property Name="CONTACTTEL" Type="varchar" MaxLength="30" />
+          <Property Name="ACCOUNTDAY" Type="varchar" MaxLength="3" />
+          <Property Name="AVERMANCOST" Type="decimal" Precision="12" Scale="2" />
+          <Property Name="MOVECOST" Type="decimal" Precision="12" Scale="2" />
+          <Property Name="INNERSALEPER" Type="decimal" Precision="4" Scale="2" />
+          <Property Name="SERVICETAXPER" Type="decimal" Precision="5" Scale="2" />
+          <Property Name="PARTSTAXPER" Type="decimal" Precision="5" Scale="2" />
+          <Property Name="ACTIONFLG" Type="char" Nullable="false" MaxLength="1" />
+          <Property Name="UPDATEMAN" Type="char" MaxLength="8" />
+          <Property Name="UPDATETIME" Type="datetime" />
+          <Property Name="TRANSFLG" Type="varchar" MaxLength="1" />
+          <Property Name="TRANSDATE" Type="varchar" MaxLength="8" />
+          <Property Name="BOXUPMONEYSHOWFLG" Type="char" Nullable="false" MaxLength="1" />
+          <Property Name="WORKMONEEYSHOWFLG" Type="char" Nullable="false" MaxLength="1" />
+          <Property Name="ELLECOMPANYCD" Type="varchar" MaxLength="10" />
+          <Property Name="OUTADMIYMNYSHOWFLG" Type="varchar" Nullable="false" MaxLength="1" />
+          <Property Name="REMAKEPARTSCD" Type="varchar" MaxLength="30" />
+          <Property Name="REMAKECOST" Type="decimal" Precision="12" Scale="2" />
+        </EntityType>
+        <EntityType Name="CUSTMST">
+          <Key>
+            <PropertyRef Name="CUSTCD" />
+          </Key>
+          <Property Name="CUSTCD" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="CUSTNM" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="CUSTABBRNM" Type="varchar" MaxLength="50" />
+          <Property Name="CUSTNMPIN" Type="varchar" MaxLength="100" />
+          <Property Name="CUSTKNDCD" Type="char" MaxLength="1" />
+          <Property Name="CUSTID" Type="varchar" MaxLength="40" />
+          <Property Name="ADDRESS" Type="varchar" MaxLength="200" />
+          <Property Name="ZIP" Type="varchar" MaxLength="6" />
+          <Property Name="TEL" Type="varchar" MaxLength="20" />
+          <Property Name="FAX" Type="varchar" MaxLength="20" />
+          <Property Name="CUSTRANK" Type="varchar" MaxLength="2" />
+          <Property Name="CUSTOLDRANK" Type="varchar" MaxLength="2" />
+          <Property Name="SALESMANCD" Type="char" MaxLength="8" />
+          <Property Name="PARTSMANCD" Type="char" MaxLength="8" />
+          <Property Name="SERVICEMANCD" Type="char" MaxLength="8" />
+          <Property Name="CONTACTMAN1" Type="varchar" MaxLength="100" />
+          <Property Name="CONTACTEMAIL1" Type="varchar" MaxLength="40" />
+          <Property Name="CONTACTTEL1" Type="varchar" MaxLength="20" />
+          <Property Name="CONTACTMAN2" Type="varchar" MaxLength="100" />
+          <Property Name="CONTACTEMAIL2" Type="varchar" MaxLength="40" />
+          <Property Name="CONTACTTEL2" Type="varchar" MaxLength="20" />
+          <Property Name="COMPANYCD" Type="char" Nullable="false" MaxLength="10" />
+          <Property Name="PAYBANKNM" Type="varchar" MaxLength="200" />
+          <Property Name="PAYBANKACCOUNT" Type="varchar" MaxLength="40" />
+          <Property Name="ReceiveFLG" Type="char" Nullable="false" MaxLength="1" />
+          <Property Name="ReceivePERIOD" Type="int" />
+          <Property Name="ACCOUNTDATE" Type="varchar" MaxLength="3" />
+          <Property Name="TRADEFLG" Type="char" Nullable="false" MaxLength="1" />
+          <Property Name="ACTIONFLG" Type="char" Nullable="false" MaxLength="1" />
+          <Property Name="UPDATETIME" Type="datetime" />
+          <Property Name="UPDATEMAN" Type="char" MaxLength="8" />
+          <Property Name="Analyze1" Type="varchar" MaxLength="200" />
+          <Property Name="Analyze2" Type="varchar" MaxLength="200" />
+          <Property Name="PAYCUSTCD" Type="nvarchar" MaxLength="10" />
+          <Property Name="TRANSFLG" Type="varchar" MaxLength="1" />
+          <Property Name="TRANSDATE" Type="varchar" MaxLength="8" />
+          <Property Name="AutoFLG" Type="char" MaxLength="1" />
+          <Property Name="FICUSTCD" Type="varchar" MaxLength="20" />
+          <Property Name="CUSTLASTOLDRANK" Type="varchar" MaxLength="2" />
+          <Property Name="ServiceReceiveFLG" Type="char" MaxLength="1" />
+          <Property Name="ServiceReceivePERIOD" Type="int" />
+          <Property Name="ServiceACCOUNTDATE" Type="varchar" Nullable="false" MaxLength="3" />
+          <Property Name="CITYAREACD" Type="varchar" MaxLength="5" />
+          <Property Name="ISPOINTMEMBER" Type="char" MaxLength="1" />
+          <Property Name="SMSPARTSFLG" Type="char" MaxLength="1" />
+          <Property Name="SMSSALESFLG" Type="char" MaxLength="1" />
+          <Property Name="SMSSERVICEFLG" Type="char" MaxLength="1" />
+          <Property Name="COSTCENTERCD" Type="varchar" MaxLength="20" />
+          <Property Name="COSTCENTERNM" Type="varchar" MaxLength="20" />
+          <Property Name="CSVFLG" Type="char" MaxLength="1" />
+          <Property Name="CreateCSVTime" Type="datetime" />
+          <Property Name="MCUSTRANK" Type="nvarchar" MaxLength="3" />
+          <Property Name="MCUSTOLDRANK" Type="nvarchar" MaxLength="3" />
+          <Property Name="MCUSTLASTOLDRANK" Type="nvarchar" MaxLength="3" />
+          <Property Name="custrankdate" Type="varchar" MaxLength="8" />
+        </EntityType>
+        <EntityType Name="MACHINEMST">
+          <Key>
+            <PropertyRef Name="MAKERCD" />
+            <PropertyRef Name="MACHINECD" />
+            <PropertyRef Name="MACHINESERIALNUM" />
+          </Key>
+          <Property Name="MAKERCD" Type="varchar" Nullable="false" MaxLength="3" />
+          <Property Name="MACHINECD" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="MACHINESERIALNUM" Type="varchar" Nullable="false" MaxLength="25" />
+          <Property Name="PINCD" Type="varchar" MaxLength="25" />
+          <Property Name="MAKEDATE" Type="varchar" MaxLength="8" />
+          <Property Name="OUTFACTRYDATE" Type="varchar" MaxLength="8" />
+          <Property Name="NEWRECEIVEDATE" Type="varchar" MaxLength="8" />
+          <Property Name="OLDRECEIVEDATE" Type="varchar" MaxLength="8" />
+          <Property Name="MACHINEKIND" Type="char" MaxLength="2" />
+          <Property Name="KIKAI_SHIYOU" Type="varchar" MaxLength="50" />
+          <Property Name="MANUFACTURECD" Type="varchar" MaxLength="10" />
+          <Property Name="SALESUBCOMPANYCD" Type="char" MaxLength="10" />
+          <Property Name="OLDCOMPANYCD" Type="char" MaxLength="10" />
+          <Property Name="OLDSUBCOMPANYCD" Type="char" MaxLength="10" />
+          <Property Name="OLDCUSTCD" Type="char" MaxLength="10" />
+          <Property Name="COMPANYCD" Type="char" MaxLength="10" />
+          <Property Name="SUBCOMPANYCD" Type="char" MaxLength="10" />
+          <Property Name="CUSTCD" Type="char" MaxLength="10" />
+          <Property Name="WORKHOURS" Type="decimal" Precision="8" Scale="1" />
+          <Property Name="MACHINESTS" Type="char" Nullable="false" MaxLength="1" />
+          <Property Name="ACTIONFLG" Type="char" Nullable="false" MaxLength="1" />
+          <Property Name="UPDATETIME" Type="datetime" />
+          <Property Name="UPDATEMAN" Type="varchar" MaxLength="40" />
+          <Property Name="memo" Type="varchar" MaxLength="100" />
+          <Property Name="TRANSFLG" Type="varchar" MaxLength="1" />
+          <Property Name="TRANSDATE" Type="varchar" MaxLength="8" />
+          <Property Name="CHANGEREASON" Type="char" MaxLength="1" />
+          <Property Name="NewOldKbn" Type="char" Nullable="false" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="MACHINETYPEMST">
+          <Key>
+            <PropertyRef Name="MAKERCD" />
+            <PropertyRef Name="MACHINECD" />
+          </Key>
+          <Property Name="MAKERCD" Type="varchar" Nullable="false" MaxLength="3" />
+          <Property Name="MACHINECD" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="MACHINENM" Type="varchar" Nullable="false" MaxLength="40" />
+          <Property Name="ACTIONFLG" Type="char" Nullable="false" MaxLength="1" />
+          <Property Name="UPDATETIME" Type="datetime" />
+          <Property Name="UPDATEMAN" Type="varchar" MaxLength="8" />
+          <Property Name="TRANSFLG" Type="varchar" MaxLength="1" />
+          <Property Name="TRANSDATE" Type="varchar" MaxLength="8" />
+          <Property Name="MachineSize" Type="varchar" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="PatrolCodeMst">
+          <Key>
+            <PropertyRef Name="CodeCD" />
+            <PropertyRef Name="CodeTypeCD" />
+          </Key>
+          <Property Name="CodeCD" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="CodeName" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="CodeValue" Type="nvarchar" MaxLength="50" />
+          <Property Name="SortCD" Type="int" Nullable="false" />
+          <Property Name="CodeTypeCD" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="CodeTypeName" Type="nvarchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="PatrolGenerateNO">
+          <Key>
+            <PropertyRef Name="PrefixCode" />
+          </Key>
+          <Property Name="PrefixCode" Type="nvarchar" Nullable="false" MaxLength="10" />
+          <Property Name="CurrentID" Type="bigint" Nullable="false" />
+          <Property Name="Increment" Type="int" Nullable="false" />
+          <Property Name="MaxID" Type="bigint" Nullable="false" />
+          <Property Name="DateType" Type="int" Nullable="false" />
+          <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+          <Property Name="UpdatedAt" Type="datetime" />
+        </EntityType>
+        <EntityType Name="PatrolReportDetail">
+          <Key>
+            <PropertyRef Name="PatrolNO" />
+            <PropertyRef Name="SubNO" />
+          </Key>
+          <Property Name="PatrolNO" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="SubNO" Type="int" Nullable="false" />
+          <Property Name="LocationCode" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="SpotCode" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Status" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="QuestionLevel" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="Remarks" Type="nvarchar" MaxLength="200" />
+          <Property Name="PicUrl" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="IsSelected" Type="nvarchar" Nullable="false" MaxLength="10" />
+          <Property Name="IsImportant" Type="nvarchar" Nullable="false" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="PatrolReportHeader">
+          <Key>
+            <PropertyRef Name="PatrolNO" />
+          </Key>
+          <Property Name="PatrolNO" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="ReportDate" Type="nvarchar" Nullable="false" MaxLength="8" />
+          <Property Name="Reporter" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="ReportStatus" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="MakerCD" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="MachineType" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="MachineNO" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="WorkedTimes" Type="float" Nullable="false" />
+          <Property Name="MachineStatus" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="IsEmergency" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="Remarks" Type="nvarchar" MaxLength="200" />
+          <Property Name="ContactorType1" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="ContactorName1" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="ContactType1" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Contaction1" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="ContactorType2" Type="nvarchar" MaxLength="50" />
+          <Property Name="ContactorName2" Type="nvarchar" MaxLength="50" />
+          <Property Name="ContactType2" Type="nvarchar" MaxLength="50" />
+          <Property Name="Contaction2" Type="nvarchar" MaxLength="50" />
+          <Property Name="WorkNO" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="ReportUri" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="Province" Type="nvarchar" MaxLength="100" />
+          <Property Name="City" Type="nvarchar" MaxLength="100" />
+          <Property Name="Address" Type="nvarchar" MaxLength="100" />
+          <Property Name="IsAvailable" Type="nvarchar" Nullable="false" MaxLength="10" />
+          <Property Name="Creator" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+          <Property Name="Updator" Type="nvarchar" MaxLength="50" />
+          <Property Name="UpdatedAt" Type="datetime" />
+        </EntityType>
+        <EntityType Name="PatrolServerList">
+          <Key>
+            <PropertyRef Name="Address" />
+          </Key>
+          <Property Name="Address" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="IsMainServer" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="SortCD" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PatrolSpotParts">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="ParentID" Type="nvarchar" MaxLength="50" />
+          <Property Name="SortCD" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PatrolUserInfo">
+          <Key>
+            <PropertyRef Name="UserCD" />
+          </Key>
+          <Property Name="UserCD" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="UserPassword" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Token" Type="nvarchar" MaxLength="50" />
+          <Property Name="TokenInvalid" Type="datetime" />
+          <Property Name="IsAdmin" Type="nvarchar" Nullable="false" MaxLength="10" />
+          <Property Name="SearchRange" Type="nvarchar" Nullable="false" MaxLength="10" />
+          <Property Name="IsAvailable" Type="nvarchar" Nullable="false" MaxLength="10" />
+          <Property Name="Creator" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+          <Property Name="Updator" Type="nvarchar" MaxLength="50" />
+          <Property Name="UpdatedAt" Type="datetime" />
+        </EntityType>
+        <EntityType Name="STAFFMST">
+          <Key>
+            <PropertyRef Name="STAFFCD" />
+          </Key>
+          <Property Name="STAFFCD" Type="char" Nullable="false" MaxLength="8" />
+          <Property Name="COMPANYCD" Type="char" Nullable="false" MaxLength="10" />
+          <Property Name="SUBCOMPANYCD" Type="char" MaxLength="10" />
+          <Property Name="STAFFNM" Type="varchar" Nullable="false" MaxLength="40" />
+          <Property Name="SEX" Type="char" Nullable="false" MaxLength="1" />
+          <Property Name="BIRTH" Type="varchar" MaxLength="8" />
+          <Property Name="IDCARD" Type="varchar" Nullable="false" MaxLength="18" />
+          <Property Name="BIRTHADD" Type="varchar" MaxLength="18" />
+          <Property Name="EDUCATION" Type="varchar" MaxLength="2" />
+          <Property Name="ADDRESS" Type="varchar" MaxLength="100" />
+          <Property Name="ZIP" Type="varchar" MaxLength="6" />
+          <Property Name="TEL" Type="varchar" MaxLength="20" />
+          <Property Name="MOBILE" Type="varchar" MaxLength="20" />
+          <Property Name="CERTIFICATENAME" Type="nvarchar" MaxLength="40" />
+          <Property Name="CERTIFICATECD" Type="varchar" MaxLength="20" />
+          <Property Name="CERTIFICATERANK" Type="nvarchar" MaxLength="40" />
+          <Property Name="ACTIONFLG" Type="char" Nullable="false" MaxLength="1" />
+          <Property Name="UPDATETIME" Type="datetime" />
+          <Property Name="UPDATEMAN" Type="char" MaxLength="8" />
+          <Property Name="Branch" Type="varchar" MaxLength="5" />
+          <Property Name="Job" Type="varchar" MaxLength="20" />
+          <Property Name="HQFLG" Type="char" MaxLength="1" />
+          <Property Name="PartsDiscountPer" Type="decimal" Precision="5" Scale="2" />
+          <Property Name="ServiceDiscountPer" Type="decimal" Precision="5" Scale="2" />
+          <Property Name="FIBRANCH" Type="varchar" MaxLength="20" />
+          <Property Name="SectionOfficeCD" Type="varchar" MaxLength="5" />
+          <Property Name="transflg" Type="varchar" MaxLength="1" />
+          <Property Name="transdate" Type="varchar" MaxLength="8" />
+          <Property Name="SERVICEITEMENABLEFLG" Type="char" MaxLength="1" />
+          <Property Name="CERTIFICATENO" Type="varchar" MaxLength="20" />
+          <Property Name="ONTHEJOBFLG" Type="varchar" MaxLength="1" />
+          <Property Name="ENTRYDATE" Type="varchar" MaxLength="8" />
+          <Property Name="DEPARTUREDATE" Type="varchar" MaxLength="8" />
+          <Property Name="GESID" Type="varchar" MaxLength="40" />
+        </EntityType>
+        <EntityType Name="SUBCOMPANYMST">
+          <Key>
+            <PropertyRef Name="SUBCOMPANYCD" />
+          </Key>
+          <Property Name="SUBCOMPANYCD" Type="char" Nullable="false" MaxLength="10" />
+          <Property Name="PRESUBCOMPANYCD" Type="char" Nullable="false" MaxLength="10" />
+          <Property Name="COMPANYCD" Type="char" Nullable="false" MaxLength="10" />
+          <Property Name="SUBCOMPANYNM" Type="varchar" MaxLength="100" />
+          <Property Name="SUBCOMPANYABBRNM" Type="varchar" MaxLength="40" />
+          <Property Name="SUBCOMPANYKBN" Type="char" Nullable="false" MaxLength="1" />
+          <Property Name="ADDRESS" Type="varchar" MaxLength="200" />
+          <Property Name="TEL" Type="varchar" MaxLength="20" />
+          <Property Name="FAX" Type="varchar" MaxLength="20" />
+          <Property Name="ZIP" Type="varchar" MaxLength="6" />
+          <Property Name="CONTACTMAN" Type="varchar" MaxLength="100" />
+          <Property Name="CONTACTTEL" Type="varchar" MaxLength="30" />
+          <Property Name="BANKNAME" Type="varchar" MaxLength="200" />
+          <Property Name="BANKACCOUNT" Type="varchar" MaxLength="30" />
+          <Property Name="TAXNUM" Type="varchar" MaxLength="30" />
+          <Property Name="SERVICETAXPER" Type="decimal" Precision="5" Scale="2" />
+          <Property Name="PARTSTAXPER" Type="decimal" Precision="5" Scale="2" />
+          <Property Name="ACCOUNTDAY" Type="varchar" MaxLength="3" />
+          <Property Name="ACTIONFLG" Type="char" Nullable="false" MaxLength="1" />
+          <Property Name="UPDATEMAN" Type="char" MaxLength="8" />
+          <Property Name="UPDATETIME" Type="datetime" />
+          <Property Name="AreaCD" Type="char" MaxLength="2" />
+          <Property Name="QUOTATIONFLG" Type="char" MaxLength="1" />
+          <Property Name="TRANSFLG" Type="varchar" MaxLength="1" />
+          <Property Name="TRANSDATE" Type="varchar" MaxLength="8" />
+          <Property Name="AccountSubCompanyCd" Type="char" MaxLength="10" />
+          <Property Name="StockOpenFlg" Type="char" Nullable="false" MaxLength="1" />
+          <Property Name="FinanceDepartCD" Type="varchar" MaxLength="20" />
+          <Property Name="SALESCENTERCD" Type="varchar" MaxLength="10" />
+          <Property Name="IsHCS" Type="char" MaxLength="1" />
+          <Property Name="IsELL" Type="char" MaxLength="1" />
+          <Property Name="ELLCD" Type="char" MaxLength="10" />
+          <Property Name="CenterProfitCD" Type="varchar" MaxLength="20" />
+          <Property Name="isSmallScaleTaxPayer" Type="varchar" MaxLength="1" />
+          <Property Name="TaxRate" Type="decimal" Precision="5" Scale="2" />
+        </EntityType>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="PatrolModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="SQLEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="COMPANYMST" EntityType="PatrolModel.COMPANYMST" />
+          <EntitySet Name="CUSTMST" EntityType="PatrolModel.CUSTMST" />
+          <EntitySet Name="MACHINEMST" EntityType="PatrolModel.MACHINEMST" />
+          <EntitySet Name="MACHINETYPEMST" EntityType="PatrolModel.MACHINETYPEMST" />
+          <EntitySet Name="PatrolSpotParts" EntityType="PatrolModel.PatrolSpotParts" />
+          <EntitySet Name="STAFFMST" EntityType="PatrolModel.STAFFMST" />
+          <EntitySet Name="SUBCOMPANYMST" EntityType="PatrolModel.SUBCOMPANYMST" />
+          <EntitySet Name="PatrolGenerateNO" EntityType="PatrolModel.PatrolGenerateNO" />
+          <EntitySet Name="PatrolCodeMst" EntityType="PatrolModel.PatrolCodeMst" />
+          <EntitySet Name="PatrolUserInfo" EntityType="PatrolModel.PatrolUserInfo" />
+          <EntitySet Name="PatrolReportDetail" EntityType="PatrolModel.PatrolReportDetail" />
+          <EntitySet Name="PatrolReportHeader" EntityType="PatrolModel.PatrolReportHeader" />
+          <EntitySet Name="PatrolServerList" EntityType="PatrolModel.PatrolServerList" />
+        </EntityContainer>
+        <EntityType Name="COMPANYMST">
+          <Key>
+            <PropertyRef Name="COMPANYCD" />
+          </Key>
+          <Property Name="COMPANYCD" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="true" />
+          <Property Name="COMPANYABBRCD" Type="String" Nullable="false" MaxLength="3" Unicode="false" FixedLength="true" />
+          <Property Name="COMPANYNM" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="COMPANYABBRNM" Type="String" Nullable="false" MaxLength="40" Unicode="false" FixedLength="false" />
+          <Property Name="AREACD" Type="String" MaxLength="2" Unicode="false" FixedLength="true" />
+          <Property Name="ADDRESS" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="TEL" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="FAX" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="ZIP" Type="String" MaxLength="6" Unicode="false" FixedLength="false" />
+          <Property Name="CONTACTMAN" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="CONTACTTEL" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="ACCOUNTDAY" Type="String" MaxLength="3" Unicode="false" FixedLength="false" />
+          <Property Name="AVERMANCOST" Type="Decimal" Precision="12" Scale="2" />
+          <Property Name="MOVECOST" Type="Decimal" Precision="12" Scale="2" />
+          <Property Name="INNERSALEPER" Type="Decimal" Precision="4" Scale="2" />
+          <Property Name="SERVICETAXPER" Type="Decimal" Precision="5" Scale="2" />
+          <Property Name="PARTSTAXPER" Type="Decimal" Precision="5" Scale="2" />
+          <Property Name="ACTIONFLG" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="UPDATEMAN" Type="String" MaxLength="8" Unicode="false" FixedLength="true" />
+          <Property Name="UPDATETIME" Type="DateTime" />
+          <Property Name="TRANSFLG" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
+          <Property Name="TRANSDATE" Type="String" MaxLength="8" Unicode="false" FixedLength="false" />
+          <Property Name="BOXUPMONEYSHOWFLG" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="WORKMONEEYSHOWFLG" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="ELLECOMPANYCD" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="OUTADMIYMNYSHOWFLG" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="false" />
+          <Property Name="REMAKEPARTSCD" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="REMAKECOST" Type="Decimal" Precision="12" Scale="2" />
+        </EntityType>
+        <EntityType Name="CUSTMST">
+          <Key>
+            <PropertyRef Name="CUSTCD" />
+          </Key>
+          <Property Name="CUSTCD" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="CUSTNM" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="CUSTABBRNM" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="CUSTNMPIN" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="CUSTKNDCD" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="CUSTID" Type="String" MaxLength="40" Unicode="false" FixedLength="false" />
+          <Property Name="ADDRESS" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+          <Property Name="ZIP" Type="String" MaxLength="6" Unicode="false" FixedLength="false" />
+          <Property Name="TEL" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="FAX" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="CUSTRANK" Type="String" MaxLength="2" Unicode="false" FixedLength="false" />
+          <Property Name="CUSTOLDRANK" Type="String" MaxLength="2" Unicode="false" FixedLength="false" />
+          <Property Name="SALESMANCD" Type="String" MaxLength="8" Unicode="false" FixedLength="true" />
+          <Property Name="PARTSMANCD" Type="String" MaxLength="8" Unicode="false" FixedLength="true" />
+          <Property Name="SERVICEMANCD" Type="String" MaxLength="8" Unicode="false" FixedLength="true" />
+          <Property Name="CONTACTMAN1" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="CONTACTEMAIL1" Type="String" MaxLength="40" Unicode="false" FixedLength="false" />
+          <Property Name="CONTACTTEL1" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="CONTACTMAN2" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="CONTACTEMAIL2" Type="String" MaxLength="40" Unicode="false" FixedLength="false" />
+          <Property Name="CONTACTTEL2" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="COMPANYCD" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="true" />
+          <Property Name="PAYBANKNM" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+          <Property Name="PAYBANKACCOUNT" Type="String" MaxLength="40" Unicode="false" FixedLength="false" />
+          <Property Name="ReceiveFLG" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="ReceivePERIOD" Type="Int32" />
+          <Property Name="ACCOUNTDATE" Type="String" MaxLength="3" Unicode="false" FixedLength="false" />
+          <Property Name="TRADEFLG" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="ACTIONFLG" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="UPDATETIME" Type="DateTime" />
+          <Property Name="UPDATEMAN" Type="String" MaxLength="8" Unicode="false" FixedLength="true" />
+          <Property Name="Analyze1" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+          <Property Name="Analyze2" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+          <Property Name="PAYCUSTCD" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="TRANSFLG" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
+          <Property Name="TRANSDATE" Type="String" MaxLength="8" Unicode="false" FixedLength="false" />
+          <Property Name="AutoFLG" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="FICUSTCD" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="CUSTLASTOLDRANK" Type="String" MaxLength="2" Unicode="false" FixedLength="false" />
+          <Property Name="ServiceReceiveFLG" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="ServiceReceivePERIOD" Type="Int32" />
+          <Property Name="ServiceACCOUNTDATE" Type="String" Nullable="false" MaxLength="3" Unicode="false" FixedLength="false" />
+          <Property Name="CITYAREACD" Type="String" MaxLength="5" Unicode="false" FixedLength="false" />
+          <Property Name="ISPOINTMEMBER" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="SMSPARTSFLG" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="SMSSALESFLG" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="SMSSERVICEFLG" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="COSTCENTERCD" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="COSTCENTERNM" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="CSVFLG" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="CreateCSVTime" Type="DateTime" />
+          <Property Name="MCUSTRANK" Type="String" MaxLength="3" Unicode="true" FixedLength="false" />
+          <Property Name="MCUSTOLDRANK" Type="String" MaxLength="3" Unicode="true" FixedLength="false" />
+          <Property Name="MCUSTLASTOLDRANK" Type="String" MaxLength="3" Unicode="true" FixedLength="false" />
+          <Property Name="custrankdate" Type="String" MaxLength="8" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="MACHINEMST">
+          <Key>
+            <PropertyRef Name="MAKERCD" />
+            <PropertyRef Name="MACHINECD" />
+            <PropertyRef Name="MACHINESERIALNUM" />
+          </Key>
+          <Property Name="MAKERCD" Type="String" Nullable="false" MaxLength="3" Unicode="false" FixedLength="false" />
+          <Property Name="MACHINECD" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="MACHINESERIALNUM" Type="String" Nullable="false" MaxLength="25" Unicode="false" FixedLength="false" />
+          <Property Name="PINCD" Type="String" MaxLength="25" Unicode="false" FixedLength="false" />
+          <Property Name="MAKEDATE" Type="String" MaxLength="8" Unicode="false" FixedLength="false" />
+          <Property Name="OUTFACTRYDATE" Type="String" MaxLength="8" Unicode="false" FixedLength="false" />
+          <Property Name="NEWRECEIVEDATE" Type="String" MaxLength="8" Unicode="false" FixedLength="false" />
+          <Property Name="OLDRECEIVEDATE" Type="String" MaxLength="8" Unicode="false" FixedLength="false" />
+          <Property Name="MACHINEKIND" Type="String" MaxLength="2" Unicode="false" FixedLength="true" />
+          <Property Name="KIKAI_SHIYOU" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="MANUFACTURECD" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="SALESUBCOMPANYCD" Type="String" MaxLength="10" Unicode="false" FixedLength="true" />
+          <Property Name="OLDCOMPANYCD" Type="String" MaxLength="10" Unicode="false" FixedLength="true" />
+          <Property Name="OLDSUBCOMPANYCD" Type="String" MaxLength="10" Unicode="false" FixedLength="true" />
+          <Property Name="OLDCUSTCD" Type="String" MaxLength="10" Unicode="false" FixedLength="true" />
+          <Property Name="COMPANYCD" Type="String" MaxLength="10" Unicode="false" FixedLength="true" />
+          <Property Name="SUBCOMPANYCD" Type="String" MaxLength="10" Unicode="false" FixedLength="true" />
+          <Property Name="CUSTCD" Type="String" MaxLength="10" Unicode="false" FixedLength="true" />
+          <Property Name="WORKHOURS" Type="Decimal" Precision="8" Scale="1" />
+          <Property Name="MACHINESTS" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="ACTIONFLG" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="UPDATETIME" Type="DateTime" />
+          <Property Name="UPDATEMAN" Type="String" MaxLength="40" Unicode="false" FixedLength="false" />
+          <Property Name="memo" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="TRANSFLG" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
+          <Property Name="TRANSDATE" Type="String" MaxLength="8" Unicode="false" FixedLength="false" />
+          <Property Name="CHANGEREASON" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="NewOldKbn" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="true" />
+        </EntityType>
+        <EntityType Name="MACHINETYPEMST">
+          <Key>
+            <PropertyRef Name="MAKERCD" />
+            <PropertyRef Name="MACHINECD" />
+          </Key>
+          <Property Name="MAKERCD" Type="String" Nullable="false" MaxLength="3" Unicode="false" FixedLength="false" />
+          <Property Name="MACHINECD" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="MACHINENM" Type="String" Nullable="false" MaxLength="40" Unicode="false" FixedLength="false" />
+          <Property Name="ACTIONFLG" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="UPDATETIME" Type="DateTime" />
+          <Property Name="UPDATEMAN" Type="String" MaxLength="8" Unicode="false" FixedLength="false" />
+          <Property Name="TRANSFLG" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
+          <Property Name="TRANSDATE" Type="String" MaxLength="8" Unicode="false" FixedLength="false" />
+          <Property Name="MachineSize" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="PatrolSpotParts">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="ParentID" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="SortCD" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="STAFFMST">
+          <Key>
+            <PropertyRef Name="STAFFCD" />
+          </Key>
+          <Property Name="STAFFCD" Type="String" Nullable="false" MaxLength="8" Unicode="false" FixedLength="true" />
+          <Property Name="COMPANYCD" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="true" />
+          <Property Name="SUBCOMPANYCD" Type="String" MaxLength="10" Unicode="false" FixedLength="true" />
+          <Property Name="STAFFNM" Type="String" Nullable="false" MaxLength="40" Unicode="false" FixedLength="false" />
+          <Property Name="SEX" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="BIRTH" Type="String" MaxLength="8" Unicode="false" FixedLength="false" />
+          <Property Name="IDCARD" Type="String" Nullable="false" MaxLength="18" Unicode="false" FixedLength="false" />
+          <Property Name="BIRTHADD" Type="String" MaxLength="18" Unicode="false" FixedLength="false" />
+          <Property Name="EDUCATION" Type="String" MaxLength="2" Unicode="false" FixedLength="false" />
+          <Property Name="ADDRESS" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="ZIP" Type="String" MaxLength="6" Unicode="false" FixedLength="false" />
+          <Property Name="TEL" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="MOBILE" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="CERTIFICATENAME" Type="String" MaxLength="40" Unicode="true" FixedLength="false" />
+          <Property Name="CERTIFICATECD" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="CERTIFICATERANK" Type="String" MaxLength="40" Unicode="true" FixedLength="false" />
+          <Property Name="ACTIONFLG" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="UPDATETIME" Type="DateTime" />
+          <Property Name="UPDATEMAN" Type="String" MaxLength="8" Unicode="false" FixedLength="true" />
+          <Property Name="Branch" Type="String" MaxLength="5" Unicode="false" FixedLength="false" />
+          <Property Name="Job" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="HQFLG" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="PartsDiscountPer" Type="Decimal" Precision="5" Scale="2" />
+          <Property Name="ServiceDiscountPer" Type="Decimal" Precision="5" Scale="2" />
+          <Property Name="FIBRANCH" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="SectionOfficeCD" Type="String" MaxLength="5" Unicode="false" FixedLength="false" />
+          <Property Name="transflg" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
+          <Property Name="transdate" Type="String" MaxLength="8" Unicode="false" FixedLength="false" />
+          <Property Name="SERVICEITEMENABLEFLG" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="CERTIFICATENO" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="ONTHEJOBFLG" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
+          <Property Name="ENTRYDATE" Type="String" MaxLength="8" Unicode="false" FixedLength="false" />
+          <Property Name="DEPARTUREDATE" Type="String" MaxLength="8" Unicode="false" FixedLength="false" />
+          <Property Name="GESID" Type="String" MaxLength="40" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="SUBCOMPANYMST">
+          <Key>
+            <PropertyRef Name="SUBCOMPANYCD" />
+          </Key>
+          <Property Name="SUBCOMPANYCD" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="true" />
+          <Property Name="PRESUBCOMPANYCD" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="true" />
+          <Property Name="COMPANYCD" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="true" />
+          <Property Name="SUBCOMPANYNM" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="SUBCOMPANYABBRNM" Type="String" MaxLength="40" Unicode="false" FixedLength="false" />
+          <Property Name="SUBCOMPANYKBN" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="ADDRESS" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+          <Property Name="TEL" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="FAX" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="ZIP" Type="String" MaxLength="6" Unicode="false" FixedLength="false" />
+          <Property Name="CONTACTMAN" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="CONTACTTEL" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="BANKNAME" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+          <Property Name="BANKACCOUNT" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="TAXNUM" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="SERVICETAXPER" Type="Decimal" Precision="5" Scale="2" />
+          <Property Name="PARTSTAXPER" Type="Decimal" Precision="5" Scale="2" />
+          <Property Name="ACCOUNTDAY" Type="String" MaxLength="3" Unicode="false" FixedLength="false" />
+          <Property Name="ACTIONFLG" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="UPDATEMAN" Type="String" MaxLength="8" Unicode="false" FixedLength="true" />
+          <Property Name="UPDATETIME" Type="DateTime" />
+          <Property Name="AreaCD" Type="String" MaxLength="2" Unicode="false" FixedLength="true" />
+          <Property Name="QUOTATIONFLG" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="TRANSFLG" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
+          <Property Name="TRANSDATE" Type="String" MaxLength="8" Unicode="false" FixedLength="false" />
+          <Property Name="AccountSubCompanyCd" Type="String" MaxLength="10" Unicode="false" FixedLength="true" />
+          <Property Name="StockOpenFlg" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="FinanceDepartCD" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="SALESCENTERCD" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="IsHCS" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="IsELL" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="ELLCD" Type="String" MaxLength="10" Unicode="false" FixedLength="true" />
+          <Property Name="CenterProfitCD" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="isSmallScaleTaxPayer" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
+          <Property Name="TaxRate" Type="Decimal" Precision="5" Scale="2" />
+        </EntityType>
+        <EntityType Name="PatrolGenerateNO">
+          <Key>
+            <PropertyRef Name="PrefixCode" />
+          </Key>
+          <Property Type="String" Name="PrefixCode" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Type="Int64" Name="CurrentID" Nullable="false" />
+          <Property Type="Int32" Name="Increment" Nullable="false" />
+          <Property Type="Int64" Name="MaxID" Nullable="false" />
+          <Property Type="Int32" Name="DateType" Nullable="false" />
+          <Property Type="DateTime" Name="CreatedAt" Nullable="false" />
+          <Property Type="DateTime" Name="UpdatedAt" />
+        </EntityType>
+        <EntityType Name="PatrolCodeMst">
+          <Key>
+            <PropertyRef Name="CodeCD" />
+            <PropertyRef Name="CodeTypeCD" />
+          </Key>
+          <Property Type="String" Name="CodeCD" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CodeName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CodeValue" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="SortCD" Nullable="false" />
+          <Property Type="String" Name="CodeTypeCD" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CodeTypeName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="PatrolUserInfo">
+          <Key>
+            <PropertyRef Name="UserCD" />
+          </Key>
+          <Property Type="String" Name="UserCD" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="UserPassword" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Token" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="TokenInvalid" />
+          <Property Type="String" Name="IsAdmin" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SearchRange" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="IsAvailable" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Creator" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="CreatedAt" Nullable="false" />
+          <Property Type="String" Name="Updator" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="UpdatedAt" />
+        </EntityType>
+        <EntityType Name="PatrolReportDetail">
+          <Key>
+            <PropertyRef Name="PatrolNO" />
+            <PropertyRef Name="SubNO" />
+          </Key>
+          <Property Type="String" Name="PatrolNO" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="SubNO" Nullable="false" />
+          <Property Type="String" Name="LocationCode" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SpotCode" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Status" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="QuestionLevel" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Remarks" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="PicUrl" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="IsSelected" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="IsImportant" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="PatrolReportHeader">
+          <Key>
+            <PropertyRef Name="PatrolNO" />
+          </Key>
+          <Property Type="String" Name="PatrolNO" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ReportDate" Nullable="false" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Reporter" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ReportStatus" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="MakerCD" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="MachineType" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="MachineNO" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="Double" Name="WorkedTimes" Nullable="false" />
+          <Property Type="String" Name="MachineStatus" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="IsEmergency" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Remarks" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ContactorType1" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ContactorName1" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ContactType1" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Contaction1" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ContactorType2" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ContactorName2" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ContactType2" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Contaction2" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="WorkNO" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ReportUri" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Province" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="City" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Address" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="IsAvailable" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Creator" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="CreatedAt" Nullable="false" />
+          <Property Type="String" Name="Updator" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="UpdatedAt" />
+        </EntityType>
+        <EntityType Name="PatrolServerList">
+          <Key>
+            <PropertyRef Name="Address" />
+          </Key>
+          <Property Type="String" Name="Address" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="IsMainServer" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="SortCD" Nullable="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="PatrolModelStoreContainer" CdmEntityContainer="SQLEntities">
+          <EntitySetMapping Name="COMPANYMST">
+            <EntityTypeMapping TypeName="PatrolModel.COMPANYMST">
+              <MappingFragment StoreEntitySet="COMPANYMST">
+                <ScalarProperty Name="COMPANYCD" ColumnName="COMPANYCD" />
+                <ScalarProperty Name="COMPANYABBRCD" ColumnName="COMPANYABBRCD" />
+                <ScalarProperty Name="COMPANYNM" ColumnName="COMPANYNM" />
+                <ScalarProperty Name="COMPANYABBRNM" ColumnName="COMPANYABBRNM" />
+                <ScalarProperty Name="AREACD" ColumnName="AREACD" />
+                <ScalarProperty Name="ADDRESS" ColumnName="ADDRESS" />
+                <ScalarProperty Name="TEL" ColumnName="TEL" />
+                <ScalarProperty Name="FAX" ColumnName="FAX" />
+                <ScalarProperty Name="ZIP" ColumnName="ZIP" />
+                <ScalarProperty Name="CONTACTMAN" ColumnName="CONTACTMAN" />
+                <ScalarProperty Name="CONTACTTEL" ColumnName="CONTACTTEL" />
+                <ScalarProperty Name="ACCOUNTDAY" ColumnName="ACCOUNTDAY" />
+                <ScalarProperty Name="AVERMANCOST" ColumnName="AVERMANCOST" />
+                <ScalarProperty Name="MOVECOST" ColumnName="MOVECOST" />
+                <ScalarProperty Name="INNERSALEPER" ColumnName="INNERSALEPER" />
+                <ScalarProperty Name="SERVICETAXPER" ColumnName="SERVICETAXPER" />
+                <ScalarProperty Name="PARTSTAXPER" ColumnName="PARTSTAXPER" />
+                <ScalarProperty Name="ACTIONFLG" ColumnName="ACTIONFLG" />
+                <ScalarProperty Name="UPDATEMAN" ColumnName="UPDATEMAN" />
+                <ScalarProperty Name="UPDATETIME" ColumnName="UPDATETIME" />
+                <ScalarProperty Name="TRANSFLG" ColumnName="TRANSFLG" />
+                <ScalarProperty Name="TRANSDATE" ColumnName="TRANSDATE" />
+                <ScalarProperty Name="BOXUPMONEYSHOWFLG" ColumnName="BOXUPMONEYSHOWFLG" />
+                <ScalarProperty Name="WORKMONEEYSHOWFLG" ColumnName="WORKMONEEYSHOWFLG" />
+                <ScalarProperty Name="ELLECOMPANYCD" ColumnName="ELLECOMPANYCD" />
+                <ScalarProperty Name="OUTADMIYMNYSHOWFLG" ColumnName="OUTADMIYMNYSHOWFLG" />
+                <ScalarProperty Name="REMAKEPARTSCD" ColumnName="REMAKEPARTSCD" />
+                <ScalarProperty Name="REMAKECOST" ColumnName="REMAKECOST" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CUSTMST">
+            <EntityTypeMapping TypeName="PatrolModel.CUSTMST">
+              <MappingFragment StoreEntitySet="CUSTMST">
+                <ScalarProperty Name="CUSTCD" ColumnName="CUSTCD" />
+                <ScalarProperty Name="CUSTNM" ColumnName="CUSTNM" />
+                <ScalarProperty Name="CUSTABBRNM" ColumnName="CUSTABBRNM" />
+                <ScalarProperty Name="CUSTNMPIN" ColumnName="CUSTNMPIN" />
+                <ScalarProperty Name="CUSTKNDCD" ColumnName="CUSTKNDCD" />
+                <ScalarProperty Name="CUSTID" ColumnName="CUSTID" />
+                <ScalarProperty Name="ADDRESS" ColumnName="ADDRESS" />
+                <ScalarProperty Name="ZIP" ColumnName="ZIP" />
+                <ScalarProperty Name="TEL" ColumnName="TEL" />
+                <ScalarProperty Name="FAX" ColumnName="FAX" />
+                <ScalarProperty Name="CUSTRANK" ColumnName="CUSTRANK" />
+                <ScalarProperty Name="CUSTOLDRANK" ColumnName="CUSTOLDRANK" />
+                <ScalarProperty Name="SALESMANCD" ColumnName="SALESMANCD" />
+                <ScalarProperty Name="PARTSMANCD" ColumnName="PARTSMANCD" />
+                <ScalarProperty Name="SERVICEMANCD" ColumnName="SERVICEMANCD" />
+                <ScalarProperty Name="CONTACTMAN1" ColumnName="CONTACTMAN1" />
+                <ScalarProperty Name="CONTACTEMAIL1" ColumnName="CONTACTEMAIL1" />
+                <ScalarProperty Name="CONTACTTEL1" ColumnName="CONTACTTEL1" />
+                <ScalarProperty Name="CONTACTMAN2" ColumnName="CONTACTMAN2" />
+                <ScalarProperty Name="CONTACTEMAIL2" ColumnName="CONTACTEMAIL2" />
+                <ScalarProperty Name="CONTACTTEL2" ColumnName="CONTACTTEL2" />
+                <ScalarProperty Name="COMPANYCD" ColumnName="COMPANYCD" />
+                <ScalarProperty Name="PAYBANKNM" ColumnName="PAYBANKNM" />
+                <ScalarProperty Name="PAYBANKACCOUNT" ColumnName="PAYBANKACCOUNT" />
+                <ScalarProperty Name="ReceiveFLG" ColumnName="ReceiveFLG" />
+                <ScalarProperty Name="ReceivePERIOD" ColumnName="ReceivePERIOD" />
+                <ScalarProperty Name="ACCOUNTDATE" ColumnName="ACCOUNTDATE" />
+                <ScalarProperty Name="TRADEFLG" ColumnName="TRADEFLG" />
+                <ScalarProperty Name="ACTIONFLG" ColumnName="ACTIONFLG" />
+                <ScalarProperty Name="UPDATETIME" ColumnName="UPDATETIME" />
+                <ScalarProperty Name="UPDATEMAN" ColumnName="UPDATEMAN" />
+                <ScalarProperty Name="Analyze1" ColumnName="Analyze1" />
+                <ScalarProperty Name="Analyze2" ColumnName="Analyze2" />
+                <ScalarProperty Name="PAYCUSTCD" ColumnName="PAYCUSTCD" />
+                <ScalarProperty Name="TRANSFLG" ColumnName="TRANSFLG" />
+                <ScalarProperty Name="TRANSDATE" ColumnName="TRANSDATE" />
+                <ScalarProperty Name="AutoFLG" ColumnName="AutoFLG" />
+                <ScalarProperty Name="FICUSTCD" ColumnName="FICUSTCD" />
+                <ScalarProperty Name="CUSTLASTOLDRANK" ColumnName="CUSTLASTOLDRANK" />
+                <ScalarProperty Name="ServiceReceiveFLG" ColumnName="ServiceReceiveFLG" />
+                <ScalarProperty Name="ServiceReceivePERIOD" ColumnName="ServiceReceivePERIOD" />
+                <ScalarProperty Name="ServiceACCOUNTDATE" ColumnName="ServiceACCOUNTDATE" />
+                <ScalarProperty Name="CITYAREACD" ColumnName="CITYAREACD" />
+                <ScalarProperty Name="ISPOINTMEMBER" ColumnName="ISPOINTMEMBER" />
+                <ScalarProperty Name="SMSPARTSFLG" ColumnName="SMSPARTSFLG" />
+                <ScalarProperty Name="SMSSALESFLG" ColumnName="SMSSALESFLG" />
+                <ScalarProperty Name="SMSSERVICEFLG" ColumnName="SMSSERVICEFLG" />
+                <ScalarProperty Name="COSTCENTERCD" ColumnName="COSTCENTERCD" />
+                <ScalarProperty Name="COSTCENTERNM" ColumnName="COSTCENTERNM" />
+                <ScalarProperty Name="CSVFLG" ColumnName="CSVFLG" />
+                <ScalarProperty Name="CreateCSVTime" ColumnName="CreateCSVTime" />
+                <ScalarProperty Name="MCUSTRANK" ColumnName="MCUSTRANK" />
+                <ScalarProperty Name="MCUSTOLDRANK" ColumnName="MCUSTOLDRANK" />
+                <ScalarProperty Name="MCUSTLASTOLDRANK" ColumnName="MCUSTLASTOLDRANK" />
+                <ScalarProperty Name="custrankdate" ColumnName="custrankdate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MACHINEMST">
+            <EntityTypeMapping TypeName="PatrolModel.MACHINEMST">
+              <MappingFragment StoreEntitySet="MACHINEMST">
+                <ScalarProperty Name="MAKERCD" ColumnName="MAKERCD" />
+                <ScalarProperty Name="MACHINECD" ColumnName="MACHINECD" />
+                <ScalarProperty Name="MACHINESERIALNUM" ColumnName="MACHINESERIALNUM" />
+                <ScalarProperty Name="PINCD" ColumnName="PINCD" />
+                <ScalarProperty Name="MAKEDATE" ColumnName="MAKEDATE" />
+                <ScalarProperty Name="OUTFACTRYDATE" ColumnName="OUTFACTRYDATE" />
+                <ScalarProperty Name="NEWRECEIVEDATE" ColumnName="NEWRECEIVEDATE" />
+                <ScalarProperty Name="OLDRECEIVEDATE" ColumnName="OLDRECEIVEDATE" />
+                <ScalarProperty Name="MACHINEKIND" ColumnName="MACHINEKIND" />
+                <ScalarProperty Name="KIKAI_SHIYOU" ColumnName="KIKAI_SHIYOU" />
+                <ScalarProperty Name="MANUFACTURECD" ColumnName="MANUFACTURECD" />
+                <ScalarProperty Name="SALESUBCOMPANYCD" ColumnName="SALESUBCOMPANYCD" />
+                <ScalarProperty Name="OLDCOMPANYCD" ColumnName="OLDCOMPANYCD" />
+                <ScalarProperty Name="OLDSUBCOMPANYCD" ColumnName="OLDSUBCOMPANYCD" />
+                <ScalarProperty Name="OLDCUSTCD" ColumnName="OLDCUSTCD" />
+                <ScalarProperty Name="COMPANYCD" ColumnName="COMPANYCD" />
+                <ScalarProperty Name="SUBCOMPANYCD" ColumnName="SUBCOMPANYCD" />
+                <ScalarProperty Name="CUSTCD" ColumnName="CUSTCD" />
+                <ScalarProperty Name="WORKHOURS" ColumnName="WORKHOURS" />
+                <ScalarProperty Name="MACHINESTS" ColumnName="MACHINESTS" />
+                <ScalarProperty Name="ACTIONFLG" ColumnName="ACTIONFLG" />
+                <ScalarProperty Name="UPDATETIME" ColumnName="UPDATETIME" />
+                <ScalarProperty Name="UPDATEMAN" ColumnName="UPDATEMAN" />
+                <ScalarProperty Name="memo" ColumnName="memo" />
+                <ScalarProperty Name="TRANSFLG" ColumnName="TRANSFLG" />
+                <ScalarProperty Name="TRANSDATE" ColumnName="TRANSDATE" />
+                <ScalarProperty Name="CHANGEREASON" ColumnName="CHANGEREASON" />
+                <ScalarProperty Name="NewOldKbn" ColumnName="NewOldKbn" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MACHINETYPEMST">
+            <EntityTypeMapping TypeName="PatrolModel.MACHINETYPEMST">
+              <MappingFragment StoreEntitySet="MACHINETYPEMST">
+                <ScalarProperty Name="MAKERCD" ColumnName="MAKERCD" />
+                <ScalarProperty Name="MACHINECD" ColumnName="MACHINECD" />
+                <ScalarProperty Name="MACHINENM" ColumnName="MACHINENM" />
+                <ScalarProperty Name="ACTIONFLG" ColumnName="ACTIONFLG" />
+                <ScalarProperty Name="UPDATETIME" ColumnName="UPDATETIME" />
+                <ScalarProperty Name="UPDATEMAN" ColumnName="UPDATEMAN" />
+                <ScalarProperty Name="TRANSFLG" ColumnName="TRANSFLG" />
+                <ScalarProperty Name="TRANSDATE" ColumnName="TRANSDATE" />
+                <ScalarProperty Name="MachineSize" ColumnName="MachineSize" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PatrolSpotParts">
+            <EntityTypeMapping TypeName="PatrolModel.PatrolSpotParts">
+              <MappingFragment StoreEntitySet="PatrolSpotParts">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ParentID" ColumnName="ParentID" />
+                <ScalarProperty Name="SortCD" ColumnName="SortCD" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="STAFFMST">
+            <EntityTypeMapping TypeName="PatrolModel.STAFFMST">
+              <MappingFragment StoreEntitySet="STAFFMST">
+                <ScalarProperty Name="STAFFCD" ColumnName="STAFFCD" />
+                <ScalarProperty Name="COMPANYCD" ColumnName="COMPANYCD" />
+                <ScalarProperty Name="SUBCOMPANYCD" ColumnName="SUBCOMPANYCD" />
+                <ScalarProperty Name="STAFFNM" ColumnName="STAFFNM" />
+                <ScalarProperty Name="SEX" ColumnName="SEX" />
+                <ScalarProperty Name="BIRTH" ColumnName="BIRTH" />
+                <ScalarProperty Name="IDCARD" ColumnName="IDCARD" />
+                <ScalarProperty Name="BIRTHADD" ColumnName="BIRTHADD" />
+                <ScalarProperty Name="EDUCATION" ColumnName="EDUCATION" />
+                <ScalarProperty Name="ADDRESS" ColumnName="ADDRESS" />
+                <ScalarProperty Name="ZIP" ColumnName="ZIP" />
+                <ScalarProperty Name="TEL" ColumnName="TEL" />
+                <ScalarProperty Name="MOBILE" ColumnName="MOBILE" />
+                <ScalarProperty Name="CERTIFICATENAME" ColumnName="CERTIFICATENAME" />
+                <ScalarProperty Name="CERTIFICATECD" ColumnName="CERTIFICATECD" />
+                <ScalarProperty Name="CERTIFICATERANK" ColumnName="CERTIFICATERANK" />
+                <ScalarProperty Name="ACTIONFLG" ColumnName="ACTIONFLG" />
+                <ScalarProperty Name="UPDATETIME" ColumnName="UPDATETIME" />
+                <ScalarProperty Name="UPDATEMAN" ColumnName="UPDATEMAN" />
+                <ScalarProperty Name="Branch" ColumnName="Branch" />
+                <ScalarProperty Name="Job" ColumnName="Job" />
+                <ScalarProperty Name="HQFLG" ColumnName="HQFLG" />
+                <ScalarProperty Name="PartsDiscountPer" ColumnName="PartsDiscountPer" />
+                <ScalarProperty Name="ServiceDiscountPer" ColumnName="ServiceDiscountPer" />
+                <ScalarProperty Name="FIBRANCH" ColumnName="FIBRANCH" />
+                <ScalarProperty Name="SectionOfficeCD" ColumnName="SectionOfficeCD" />
+                <ScalarProperty Name="transflg" ColumnName="transflg" />
+                <ScalarProperty Name="transdate" ColumnName="transdate" />
+                <ScalarProperty Name="SERVICEITEMENABLEFLG" ColumnName="SERVICEITEMENABLEFLG" />
+                <ScalarProperty Name="CERTIFICATENO" ColumnName="CERTIFICATENO" />
+                <ScalarProperty Name="ONTHEJOBFLG" ColumnName="ONTHEJOBFLG" />
+                <ScalarProperty Name="ENTRYDATE" ColumnName="ENTRYDATE" />
+                <ScalarProperty Name="DEPARTUREDATE" ColumnName="DEPARTUREDATE" />
+                <ScalarProperty Name="GESID" ColumnName="GESID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SUBCOMPANYMST">
+            <EntityTypeMapping TypeName="PatrolModel.SUBCOMPANYMST">
+              <MappingFragment StoreEntitySet="SUBCOMPANYMST">
+                <ScalarProperty Name="SUBCOMPANYCD" ColumnName="SUBCOMPANYCD" />
+                <ScalarProperty Name="PRESUBCOMPANYCD" ColumnName="PRESUBCOMPANYCD" />
+                <ScalarProperty Name="COMPANYCD" ColumnName="COMPANYCD" />
+                <ScalarProperty Name="SUBCOMPANYNM" ColumnName="SUBCOMPANYNM" />
+                <ScalarProperty Name="SUBCOMPANYABBRNM" ColumnName="SUBCOMPANYABBRNM" />
+                <ScalarProperty Name="SUBCOMPANYKBN" ColumnName="SUBCOMPANYKBN" />
+                <ScalarProperty Name="ADDRESS" ColumnName="ADDRESS" />
+                <ScalarProperty Name="TEL" ColumnName="TEL" />
+                <ScalarProperty Name="FAX" ColumnName="FAX" />
+                <ScalarProperty Name="ZIP" ColumnName="ZIP" />
+                <ScalarProperty Name="CONTACTMAN" ColumnName="CONTACTMAN" />
+                <ScalarProperty Name="CONTACTTEL" ColumnName="CONTACTTEL" />
+                <ScalarProperty Name="BANKNAME" ColumnName="BANKNAME" />
+                <ScalarProperty Name="BANKACCOUNT" ColumnName="BANKACCOUNT" />
+                <ScalarProperty Name="TAXNUM" ColumnName="TAXNUM" />
+                <ScalarProperty Name="SERVICETAXPER" ColumnName="SERVICETAXPER" />
+                <ScalarProperty Name="PARTSTAXPER" ColumnName="PARTSTAXPER" />
+                <ScalarProperty Name="ACCOUNTDAY" ColumnName="ACCOUNTDAY" />
+                <ScalarProperty Name="ACTIONFLG" ColumnName="ACTIONFLG" />
+                <ScalarProperty Name="UPDATEMAN" ColumnName="UPDATEMAN" />
+                <ScalarProperty Name="UPDATETIME" ColumnName="UPDATETIME" />
+                <ScalarProperty Name="AreaCD" ColumnName="AreaCD" />
+                <ScalarProperty Name="QUOTATIONFLG" ColumnName="QUOTATIONFLG" />
+                <ScalarProperty Name="TRANSFLG" ColumnName="TRANSFLG" />
+                <ScalarProperty Name="TRANSDATE" ColumnName="TRANSDATE" />
+                <ScalarProperty Name="AccountSubCompanyCd" ColumnName="AccountSubCompanyCd" />
+                <ScalarProperty Name="StockOpenFlg" ColumnName="StockOpenFlg" />
+                <ScalarProperty Name="FinanceDepartCD" ColumnName="FinanceDepartCD" />
+                <ScalarProperty Name="SALESCENTERCD" ColumnName="SALESCENTERCD" />
+                <ScalarProperty Name="IsHCS" ColumnName="IsHCS" />
+                <ScalarProperty Name="IsELL" ColumnName="IsELL" />
+                <ScalarProperty Name="ELLCD" ColumnName="ELLCD" />
+                <ScalarProperty Name="CenterProfitCD" ColumnName="CenterProfitCD" />
+                <ScalarProperty Name="isSmallScaleTaxPayer" ColumnName="isSmallScaleTaxPayer" />
+                <ScalarProperty Name="TaxRate" ColumnName="TaxRate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PatrolGenerateNO">
+            <EntityTypeMapping TypeName="PatrolModel.PatrolGenerateNO">
+              <MappingFragment StoreEntitySet="PatrolGenerateNO">
+                <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="DateType" ColumnName="DateType" />
+                <ScalarProperty Name="MaxID" ColumnName="MaxID" />
+                <ScalarProperty Name="Increment" ColumnName="Increment" />
+                <ScalarProperty Name="CurrentID" ColumnName="CurrentID" />
+                <ScalarProperty Name="PrefixCode" ColumnName="PrefixCode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PatrolCodeMst">
+            <EntityTypeMapping TypeName="PatrolModel.PatrolCodeMst">
+              <MappingFragment StoreEntitySet="PatrolCodeMst">
+                <ScalarProperty Name="CodeTypeName" ColumnName="CodeTypeName" />
+                <ScalarProperty Name="CodeTypeCD" ColumnName="CodeTypeCD" />
+                <ScalarProperty Name="SortCD" ColumnName="SortCD" />
+                <ScalarProperty Name="CodeValue" ColumnName="CodeValue" />
+                <ScalarProperty Name="CodeName" ColumnName="CodeName" />
+                <ScalarProperty Name="CodeCD" ColumnName="CodeCD" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PatrolUserInfo">
+            <EntityTypeMapping TypeName="PatrolModel.PatrolUserInfo">
+              <MappingFragment StoreEntitySet="PatrolUserInfo">
+                <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+                <ScalarProperty Name="Updator" ColumnName="Updator" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="Creator" ColumnName="Creator" />
+                <ScalarProperty Name="IsAvailable" ColumnName="IsAvailable" />
+                <ScalarProperty Name="SearchRange" ColumnName="SearchRange" />
+                <ScalarProperty Name="IsAdmin" ColumnName="IsAdmin" />
+                <ScalarProperty Name="TokenInvalid" ColumnName="TokenInvalid" />
+                <ScalarProperty Name="Token" ColumnName="Token" />
+                <ScalarProperty Name="UserPassword" ColumnName="UserPassword" />
+                <ScalarProperty Name="UserCD" ColumnName="UserCD" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PatrolReportDetail">
+            <EntityTypeMapping TypeName="PatrolModel.PatrolReportDetail">
+              <MappingFragment StoreEntitySet="PatrolReportDetail">
+                <ScalarProperty Name="IsImportant" ColumnName="IsImportant" />
+                <ScalarProperty Name="IsSelected" ColumnName="IsSelected" />
+                <ScalarProperty Name="PicUrl" ColumnName="PicUrl" />
+                <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+                <ScalarProperty Name="QuestionLevel" ColumnName="QuestionLevel" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="SpotCode" ColumnName="SpotCode" />
+                <ScalarProperty Name="LocationCode" ColumnName="LocationCode" />
+                <ScalarProperty Name="SubNO" ColumnName="SubNO" />
+                <ScalarProperty Name="PatrolNO" ColumnName="PatrolNO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PatrolReportHeader">
+            <EntityTypeMapping TypeName="PatrolModel.PatrolReportHeader">
+              <MappingFragment StoreEntitySet="PatrolReportHeader">
+                <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+                <ScalarProperty Name="Updator" ColumnName="Updator" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="Creator" ColumnName="Creator" />
+                <ScalarProperty Name="IsAvailable" ColumnName="IsAvailable" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Province" ColumnName="Province" />
+                <ScalarProperty Name="ReportUri" ColumnName="ReportUri" />
+                <ScalarProperty Name="WorkNO" ColumnName="WorkNO" />
+                <ScalarProperty Name="Contaction2" ColumnName="Contaction2" />
+                <ScalarProperty Name="ContactType2" ColumnName="ContactType2" />
+                <ScalarProperty Name="ContactorName2" ColumnName="ContactorName2" />
+                <ScalarProperty Name="ContactorType2" ColumnName="ContactorType2" />
+                <ScalarProperty Name="Contaction1" ColumnName="Contaction1" />
+                <ScalarProperty Name="ContactType1" ColumnName="ContactType1" />
+                <ScalarProperty Name="ContactorName1" ColumnName="ContactorName1" />
+                <ScalarProperty Name="ContactorType1" ColumnName="ContactorType1" />
+                <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+                <ScalarProperty Name="IsEmergency" ColumnName="IsEmergency" />
+                <ScalarProperty Name="MachineStatus" ColumnName="MachineStatus" />
+                <ScalarProperty Name="WorkedTimes" ColumnName="WorkedTimes" />
+                <ScalarProperty Name="MachineNO" ColumnName="MachineNO" />
+                <ScalarProperty Name="MachineType" ColumnName="MachineType" />
+                <ScalarProperty Name="MakerCD" ColumnName="MakerCD" />
+                <ScalarProperty Name="ReportStatus" ColumnName="ReportStatus" />
+                <ScalarProperty Name="Reporter" ColumnName="Reporter" />
+                <ScalarProperty Name="ReportDate" ColumnName="ReportDate" />
+                <ScalarProperty Name="PatrolNO" ColumnName="PatrolNO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PatrolServerList">
+            <EntityTypeMapping TypeName="PatrolModel.PatrolServerList">
+              <MappingFragment StoreEntitySet="PatrolServerList">
+                <ScalarProperty Name="SortCD" ColumnName="SortCD" />
+                <ScalarProperty Name="IsMainServer" ColumnName="IsMainServer" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="PatrolModel" ZoomLevel="94">
+        <EntityTypeShape EntityType="PatrolModel.COMPANYMST" Width="1.5" PointX="0.75" PointY="0.75" Height="6.3634855143229156" IsExpanded="true" />
+        <EntityTypeShape EntityType="PatrolModel.CUSTMST" Width="1.5" PointX="2.75" PointY="0.75" Height="11.521017252604166" IsExpanded="true" />
+        <EntityTypeShape EntityType="PatrolModel.MACHINEMST" Width="1.5" PointX="4.75" PointY="0.75" Height="6.3634855143229156" IsExpanded="true" />
+        <EntityTypeShape EntityType="PatrolModel.MACHINETYPEMST" Width="1.5" PointX="6.75" PointY="0.75" Height="2.7341113281249996" IsExpanded="true" />
+        <EntityTypeShape EntityType="PatrolModel.PatrolSpotParts" Width="1.5" PointX="10.75" PointY="0.75" Height="1.7790128580729174" IsExpanded="true" />
+        <EntityTypeShape EntityType="PatrolModel.STAFFMST" Width="1.5" PointX="4.75" PointY="10.75" Height="7.5096036783854174" IsExpanded="true" />
+        <EntityTypeShape EntityType="PatrolModel.SUBCOMPANYMST" Width="1.5" PointX="6.75" PointY="10.75" Height="7.7006233723958317" IsExpanded="true" />
+        <EntityTypeShape EntityType="PatrolModel.PatrolGenerateNO" Width="1.5" PointX="9.375" PointY="10.75" Height="2.3520719401041674" />
+        <EntityTypeShape EntityType="PatrolModel.PatrolCodeMst" Width="1.5" PointX="7.375" PointY="4.75" Height="2.1610522460937531" />
+        <EntityTypeShape EntityType="PatrolModel.PatrolUserInfo" Width="1.5" PointX="9.375" PointY="3.75" Height="3.1161507161458388" />
+        <EntityTypeShape EntityType="PatrolModel.PatrolReportDetail" Width="1.5" PointX="11.375" PointY="3.75" Height="2.9251310221354174" />
+        <EntityTypeShape EntityType="PatrolModel.PatrolReportHeader" Width="1.5" PointX="11.375" PointY="7.75" Height="6.5545052083333353" />
+        <EntityTypeShape EntityType="PatrolModel.PatrolServerList" Width="1.5" PointX="7.375" PointY="7.75" Height="1.7790128580729174" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

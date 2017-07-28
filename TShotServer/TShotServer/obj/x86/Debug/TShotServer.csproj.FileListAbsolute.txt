@@ -1,0 +1,5 @@
+D:\TShot\ShotServer\TShotServer\TShotServer\bin\Debug\TShotServer.exe.config
+D:\TShot\ShotServer\TShotServer\TShotServer\bin\Debug\TShotServer.exe
+D:\TShot\ShotServer\TShotServer\TShotServer\bin\Debug\TShotServer.pdb
+D:\TShot\ShotServer\TShotServer\TShotServer\obj\x86\Debug\TShotServer.exe
+D:\TShot\ShotServer\TShotServer\TShotServer\obj\x86\Debug\TShotServer.pdb

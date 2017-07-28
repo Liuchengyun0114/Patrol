@@ -1,0 +1,81 @@
+{
+  "function_id": "1003",
+  "return_flag": "0",
+  "return_msg": "成功",
+  "model_list": [
+    {
+      "code": "1001",
+      "name": "ZX200-5G"
+    },
+    {
+      "code": "1002",
+      "name": "ZX200-6G"
+    }
+  ],
+  "check_list": [
+    {
+      "code": "1001",
+      "name": "外观",
+      "sub_list": [
+        {
+          "code": "1001",
+          "name": "正面"
+        },
+        {
+          "code": "1002",
+          "name": "左前侧"
+        }
+      ]
+    }
+  ],
+  "machine_status_list": [
+    {
+      "code": "1001",
+      "name": "机器正常工作"
+    },
+    {
+      "code": "1002",
+      "name": "ZX200-6G故障导致停机"
+    }
+  ],
+  "level_list": [
+    {
+      "code": "1001",
+      "name": "紧急"
+    },
+    {
+      "code": "1002",
+      "name": "ZX200-6G一般"
+    }
+  ],
+  "spot_status_list": [
+    {
+      "code": "1001",
+      "name": "正常工作"
+    },
+    {
+      "code": "1002",
+      "name": "暂停工作"
+    }
+  ],
+  "phone_type_list": [
+    {
+      "code": "1001",
+      "name": "手机"
+    },
+    {
+      "code": "1002",
+      "name": "固话"
+    }
+  ],
+  "contact_type_list": [
+    {
+      "code": "1001",
+      "name": "管理员"
+    },
+    {
+      "code": "1002",
+      "name": "顾客"
+    }
+  ]
+} 

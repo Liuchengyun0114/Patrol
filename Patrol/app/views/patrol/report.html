@@ -1,0 +1,135 @@
+<div ng-show="!issuccess">
+    <h1>很抱歉,此报告书不存在</h1>
+</div>
+<div ng-if="issuccess" class="container" style="height:100%;width:100%;padding:10px 10px;margin: 10px;">
+
+    <div class="col-xs-12">
+        <div class="col-xs-8"></div>
+        <div class="col-xs-4">
+            <ul class="list-group">
+                <li class="list-group-item"><strong>编号:</strong>{{headerInfo.report_uri}}</li>
+                <li class="list-group-item"><strong>发行方:</strong>青岛诚日建机有限公司</li>
+                <li class="list-group-item"><strong>发行日:</strong>20170504</li>
+            </ul>
+        </div>
+    </div>
+    <div class="">
+        <h2 class="text-danger text-center">{{headerInfo.reporter_name}}-{{headerInfo.report_date}} 特巡检查报告书</h2>
+        <div class="col-xs-12">
+            <p>
+                <span>尊敬的<strong style="padding-left:30px;padding-right:30px">{{headerInfo.reporter_name}}</strong>先生/女士/公司：</span>
+            </p>
+            <p>
+                <span style="padding-left:30px;padding-right:30px">首先,感谢您对日立建机产品的长期支持和厚爱！</span><br>
+                <span style="padding-left:30px;padding-right:30px">
+            在您的大力支持下,此次我们顺利对您拥有的以下日立建机产品实施了现场检查,详细的检查结果如下所述,希望您能根据我们的建议
+        </span><br>
+                <span style="padding-left:30px;padding-right:30px">
+            及早对您的机器实施相应的维护.如有任何疑问,欢迎垂询！
+        </span><br>
+            </p>
+        </div>
+        <!--  检查概要 -->
+        <div class="form-group">
+            <div class="col-xs-12">
+                <label class="text-danger">《检查概要》</label>
+                <textarea class="form-control" rows="4" ng-model="headerInfo.remarks"></textarea>
+            </div>
+        </div>
+        <!--  基础信息 -->
+        <div class="form-group">
+            <div class="col-xs-12">
+                <label class="text-danger">《基本信息》</label>
+                <div class="col-xs-12" style="border: solid 1px lightgray;">
+                        <div class="col-xs-4">
+                            <div class="col-xs-6" style="border-right: solid 1px lightgray;"><strong>机型</strong></div>
+                            <div class="col-xs-6" style="border-right: solid 1px lightgray;">&nbsp;{{headerInfo.machine_type}}</div>
+                        </div>
+                        <div class="col-xs-4">
+                            <div class="col-xs-6" style="border-right: solid 1px lightgray;"><strong>机号</strong></div>
+                            <div class="col-xs-6" style="border-right: solid 1px lightgray;">&nbsp;{{headerInfo.machine_no}}</div>
+                        </div>
+                        <div class="col-xs-4">
+                            <div class="col-xs-6" style="border-right: solid 1px lightgray;"><strong>工作小时</strong></div>
+                            <div class="col-xs-6">&nbsp;{{headerInfo.worked_times}}</div>
+                        </div>
+                    </div>
+                <div class="col-xs-12" style="border: solid 1px lightgray;">
+                    <div class="col-xs-4">
+                        <div class="col-xs-6" style="border-right: solid 1px lightgray;"><strong>施工地点</strong></div>
+                        <div class="col-xs-6" style="border-right: solid 1px lightgray;">&nbsp;{{headerInfo.customer}}</div>
+                    </div>
+                    <div class="col-xs-8">
+                    </div>
+                </div>
+
+                <div class="col-xs-12" style="border: solid 1px lightgray;">
+                        <div class="col-xs-4">
+                            <div class="col-xs-6" style="border-right: solid 1px lightgray;"><strong>检查人员</strong></div>
+                            <div class="col-xs-6" style="border-right: solid 1px lightgray;">&nbsp;{{headerInfo.reporter_name}}</div>
+                        </div>
+                        <div class="col-xs-4">
+                            <div class="col-xs-6" style="border-right: solid 1px lightgray;"><strong>检查日期</strong></div>
+                            <div class="col-xs-6" style="border-right: solid 1px lightgray;">&nbsp;{{headerInfo.report_date}}</div>
+                        </div>
+                        <div class="col-xs-4">
+                            <div class="col-xs-6" style="border-right: solid 1px lightgray;"><strong>联系电话</strong></div>
+                            <div class="col-xs-6">&nbsp;{{headerInfo.reporter_phone}}</div>
+                        </div>
+                    </div>
+
+                <div class="col-xs-12" style="border: solid 1px lightgray;">
+                    <div class="col-xs-4">
+                        <div class="col-xs-6" style="border-right: solid 1px lightgray;"><strong>客户</strong></div>
+                        <div class="col-xs-6" style="border-right: solid 1px lightgray;">&nbsp;{{headerInfo.contactor_name}}</div>
+                    </div>
+                    <div class="col-xs-4">
+                        <div class="col-xs-6" style="border-right: solid 1px lightgray;"><strong>客户电话</strong></div>
+                        <div class="col-xs-6" style="border-right: solid 1px lightgray;">&nbsp;{{headerInfo.contactor_name}}</div>
+                    </div>
+                    <div class="col-xs-4">
+                        <div class="col-xs-12">&nbsp;</div>
+                    </div>
+                </div>
+
+                <div class="col-xs-12" style="border: solid 1px lightgray;">
+                    <div class="col-xs-8">
+                        <div class="col-xs-4" style="border-right: solid 1px lightgray;"><strong>现场联系人(机主)</strong></div>
+                        <div class="col-xs-5" style="border-right: solid 1px lightgray;">&nbsp;{{headerInfo.operator_name}}</div>
+                        <div class="col-xs-3" style="border-right: solid 1px lightgray;"><strong>现场联系人电话</strong></div>
+                    </div>
+                    <div class="col-xs-4">
+                        <div class="col-xs-12">&nbsp;{{headerInfo.operator_phone}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--  整机外观图片 -->
+        <div class="form-group">
+            <div class="col-xs-12">
+                <label class="text-danger">《整机外观图片》</label>
+                <div class="table-bordered text-center">
+                    <h1>机器外观图片 不超过3张</h1>
+                </div>
+            </div>
+        </div>
+
+        <!--  图片信息 -->
+        <div class="form-group">
+            <div class="col-xs-6" ng-repeat="item in detailList">
+                <label for="customer" class="control-label col-xs-6 text-primary">{{item.location_code_name}}-{{item.spot_code_name}}</label>
+                <div>
+                    <label class="checkbox-inline text-danger">
+                        <input type="checkbox" ng-model="item.is_selected">加入报告书
+                    </label>
+                </div>
+                <div class="thumbnail">
+                    <img src="/resources/save/{{item.pic_url}}" alt="通用的占位符缩略图">
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+

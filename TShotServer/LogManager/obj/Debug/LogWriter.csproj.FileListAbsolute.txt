@@ -1,0 +1,5 @@
+D:\TShot\ShotServer\TShotServer\LogManager\bin\Debug\LogWriter.pdb
+D:\TShot\ShotServer\TShotServer\LogManager\bin\Debug\log4net.dll
+D:\TShot\ShotServer\TShotServer\LogManager\obj\Debug\LogWriter.pdb
+D:\TShot\ShotServer\TShotServer\LogManager\bin\Debug\LogWriter.dll
+D:\TShot\ShotServer\TShotServer\LogManager\obj\Debug\LogWriter.dll

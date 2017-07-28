@@ -1,0 +1,212 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7817B608-86CB-4B6A-B104-B0CE6CBD19A0}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PatrolServer</RootNamespace>
+    <AssemblyName>PatrolServer</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>PatrolServer.Start</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\LogManager\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CommonInfo.cs" />
+    <Compile Include="Common\JSONFormater.cs" />
+    <Compile Include="Common\KeyValue.cs" />
+    <Compile Include="Message\MSBase.cs" />
+    <Compile Include="Message\MSUpdatePassword.cs" />
+    <Compile Include="Message\MSGetUserList.cs" />
+    <Compile Include="Message\MSGetBaseInfo.cs" />
+    <Compile Include="Message\MSUploadImage.cs" />
+    <Compile Include="Message\MSUploadPatrolInformation.cs" />
+    <Compile Include="Message\MSLoginCheck.cs" />
+    <Compile Include="PatrolServer\Request\BaseRequestMessage.cs" />
+    <Compile Include="PatrolServer\Request\GetBaseInfoMsgRequest.cs" />
+    <Compile Include="PatrolServer\Request\GetUserListMsgRequest.cs" />
+    <Compile Include="PatrolServer\Request\UpdatePasswordMsgRequest.cs" />
+    <Compile Include="PatrolServer\Request\UploadImageMsgRequest.cs" />
+    <Compile Include="PatrolServer\Request\UploadPatrolInformationMsgRequest.cs" />
+    <Compile Include="PatrolServer\Response\BaseResponseMessage.cs" />
+    <Compile Include="PatrolServer\Response\GetBaseInfoMsgResponse.cs" />
+    <Compile Include="PatrolServer\Response\GetUserListMsgResponse.cs" />
+    <Compile Include="PatrolServer\Response\UpdatePasswordMsgResponse.cs" />
+    <Compile Include="PatrolServer\Response\UploadImageMsgResponse.cs" />
+    <Compile Include="PatrolServer\Response\UploadPatrolInformationMsgResponse.cs" />
+    <Compile Include="Services\Base\BaseHost.cs" />
+    <Compile Include="Services\Base\BaseService.cs" />
+    <Compile Include="Services\Base\IBaseService.cs" />
+    <Compile Include="Services\Base\Response\Entity\NodeInfo.cs" />
+    <Compile Include="Services\Base\Response\Entity\ServerInfo.cs" />
+    <Compile Include="Services\Base\Response\ResGetUserList.cs" />
+    <Compile Include="Services\Base\Response\ResGetBaseInfo.cs" />
+    <Compile Include="Services\Base\Response\ResGetServerList.cs" />
+    <Compile Include="Services\CustomHeaderMessageInspector.cs" />
+    <Compile Include="Services\EnableCrossOriginResourceSharingBehavior.cs" />
+    <Compile Include="Services\MessageHelper.cs" />
+    <Compile Include="Services\Patrol\IPatrolService.cs" />
+    <Compile Include="Services\Patrol\PatrolHost.cs" />
+    <Compile Include="Services\Patrol\PatrolService.cs" />
+    <Compile Include="Services\Patrol\Request\Entity\PaginatorInfo.cs" />
+    <Compile Include="Services\Patrol\Request\Entity\PatrolHeaderInfo.cs" />
+    <Compile Include="Services\Patrol\Request\Entity\PatrolDetailInfo.cs" />
+    <Compile Include="Services\Patrol\Request\Entity\PatrolSearchInfo.cs" />
+    <Compile Include="Services\Patrol\Request\ReqGetPatrolList.cs" />
+    <Compile Include="Services\Patrol\Request\ReqGetPatrolBase.cs" />
+    <Compile Include="Services\Patrol\Request\ReqGetPatrol.cs" />
+    <Compile Include="Services\Patrol\Request\ReqUpdatePatrol.cs" />
+    <Compile Include="Services\Patrol\Request\ReqDeletePatrol.cs" />
+    <Compile Include="Services\Patrol\Request\ReqShowReport.cs" />
+    <Compile Include="Services\Patrol\Response\Entity\NodeInfo.cs" />
+    <Compile Include="Services\Patrol\Response\Entity\PatrolDetailInfo.cs" />
+    <Compile Include="Services\Patrol\Response\Entity\PatrolHeaderInfo.cs" />
+    <Compile Include="Services\Patrol\Response\Entity\PatrolBaseInfo.cs" />
+    <Compile Include="Services\Patrol\Response\Entity\PatrolInfo.cs" />
+    <Compile Include="Services\Patrol\Response\ResGetPatrolList.cs" />
+    <Compile Include="Services\Patrol\Response\ResDeletePatrol.cs" />
+    <Compile Include="Services\Patrol\Response\ResUpdatePatrol.cs" />
+    <Compile Include="Services\Patrol\Response\ResGetPatrol.cs" />
+    <Compile Include="Services\Patrol\Response\ResGetPatrolBase.cs" />
+    <Compile Include="Services\Patrol\Response\ResShowReport.cs" />
+    <Compile Include="Services\Report\ReportHost.cs" />
+    <Compile Include="Services\Report\IReportService.cs" />
+    <Compile Include="Services\Report\ReportService.cs" />
+    <Compile Include="Services\Report\Request\Entity\PicInfo.cs" />
+    <Compile Include="Services\Report\Request\ReqUploadImage.cs" />
+    <Compile Include="Services\Report\Request\ReqUploadPatrolInformation.cs" />
+    <Compile Include="Services\Report\Response\Entity\PicInfo.cs" />
+    <Compile Include="Services\Report\Response\MultipartTransfer.cs" />
+    <Compile Include="Services\Report\Response\ResUploadImage.cs" />
+    <Compile Include="Services\Report\Response\ResUploadPatrolInformation.cs" />
+    <Compile Include="Services\ServicesController.cs" />
+    <Compile Include="Services\User\IUserService.cs" />
+    <Compile Include="Services\User\Request\Entity\PaginatorInfo.cs" />
+    <Compile Include="Services\User\Request\Entity\UserInfo.cs" />
+    <Compile Include="Services\User\Request\Entity\UserSearchInfo.cs" />
+    <Compile Include="Services\User\Request\ReqUpdatePassword.cs" />
+    <Compile Include="Services\User\Request\ReqLoginCheck.cs" />
+    <Compile Include="Services\User\Request\ReqAddUser.cs" />
+    <Compile Include="Services\User\Request\ReqUpdateUser.cs" />
+    <Compile Include="Services\User\Request\ReqDeleteUser.cs" />
+    <Compile Include="Services\User\Request\ReqGetUser.cs" />
+    <Compile Include="Services\User\Request\ReqGetUserList.cs" />
+    <Compile Include="Services\User\Request\ReqGetUserBase.cs" />
+    <Compile Include="Services\User\Response\Entity\NodeInfo.cs" />
+    <Compile Include="Services\User\Response\Entity\UserBaseInfo.cs" />
+    <Compile Include="Services\User\Response\Entity\UserInfo.cs" />
+    <Compile Include="Services\User\Response\ResUpdatePassword.cs" />
+    <Compile Include="Services\User\Response\ResLoginCheck.cs" />
+    <Compile Include="Services\User\Response\ResAddUser.cs" />
+    <Compile Include="Services\User\Response\ResDeleteUser.cs" />
+    <Compile Include="Services\User\Response\ResGetUser.cs" />
+    <Compile Include="Services\User\Response\ResGetUserList.cs" />
+    <Compile Include="Services\User\Response\ResUpdateUser.cs" />
+    <Compile Include="Services\User\Response\ResUserBase.cs" />
+    <Compile Include="Services\User\UserHost.cs" />
+    <Compile Include="Services\User\UserService.cs" />
+    <Compile Include="Start.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Images\0.jpg" />
+    <Content Include="Images\1.jpg" />
+    <Content Include="Images\2.jpg" />
+    <Content Include="Images\201771421253210515262c9decc30-5e64-47a9-ac04-e5cf51c42695.jpg" />
+    <Content Include="Images\3.jpg" />
+    <Content Include="Images\4.jpg" />
+    <Content Include="Images\5.jpg" />
+    <Content Include="Images\6.jpg" />
+    <Content Include="Images\7.jpg" />
+    <Content Include="Images\8.jpg" />
+    <Content Include="Images\9.jpg" />
+    <Content Include="Images\Chrysanthemum.jpg" />
+    <Content Include="Images\Desert.jpg" />
+    <Content Include="Images\Hydrangeas.jpg" />
+    <Content Include="Images\Jellyfish.jpg" />
+    <Content Include="Images\Koala.jpg" />
+    <Content Include="Images\Lighthouse.jpg" />
+    <Content Include="Images\num.jpg" />
+    <Content Include="Images\Penguins.jpg" />
+    <Content Include="Images\s.jpg" />
+    <Content Include="Images\郁金香.gif" />
+    <Content Include="Model.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LogManager\LogWriter.csproj">
+      <Project>{C2344866-AC05-4628-B6F6-988B1CEC59AE}</Project>
+      <Name>LogWriter</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{47A66DD2-87E4-48D5-BC2A-B9D250F0CF62}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Services\Base\Request\Entity\" />
+    <Folder Include="SQLManager\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
